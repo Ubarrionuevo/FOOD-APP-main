@@ -8,9 +8,25 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg bg-danger" >
+    <div class="container-fluid">
+  
+      <div class="collapse navbar-collapse p-2" id="navbarText">
+        <svg xmlns="http://www.w3.org/2000/svg"  class="" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-  <div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="form-container w-75">
+          <li class="nav-item">
+            
+            <a class="nav-link active text-light text-decoration-none " aria-current="page" href="/index.html">CompraFacil</a>
+          </li>
+    
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+  <div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="form-container ">
       <form  class="align-items-center">
         <!-- Sección de Método de Pago -->
         <div class="form-section mb-4">
@@ -45,7 +61,7 @@
         </div>
 
         <!-- Botón de Enviar -->
-        <button class="btn btn-success w-97" onclick="redirectToWhatsApp(); return false;">Enviar Pedido</button>
+        <button class="btn btn-success bg-danger w-97" onclick="redirectToWhatsApp(); return false;">Enviar Pedido</button>
       </form>
     </div>
   </div>

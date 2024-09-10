@@ -1,0 +1,25 @@
+/* Contenedor centrado y con tamaño ajustado */
+.form-container {
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    max-width: 600px; /* Ancho máximo para evitar que sea muy grande */
+    background-color: #f8f9fa; /* Color de fondo (opcional) */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Limitar la altura del contenedor y permitir desplazamiento */
+.products-container {
+    max-height: 400px; /* Ajusta la altura máxima según necesites */
+    overflow-y: auto;  /* Scroll vertical cuando sea necesario */
+}
+
+/* Alinear verticalmente y centrar el contenedor */
+.container {
+    height: 100vh; /* La altura del contenedor padre para centrar verticalmente */
+}
+
+/* Botones dentro de cada item */
+button {
+    text-align: left; /* Mantener los botones alineados a la izquierda */
+}

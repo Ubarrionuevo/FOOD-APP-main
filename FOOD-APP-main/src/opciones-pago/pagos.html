@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Opciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="form-container w-75">
+      <form id="optionsForm">
+        <!-- Sección de Método de Pago -->
+        <div class="form-section mb-4">
+          <h4 class="mb-3">Método de Pago</h4>
+          <div class="form-check">
+            <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="saveSelection('paymentMethod', this.value)">
+            <label for="paymentCash" class="form-check-label">Efectivo</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="paymentCard" name="paymentMethod" value="tarjeta" class="form-check-input" onclick="saveSelection('paymentMethod', this.value)">
+            <label for="paymentCard" class="form-check-label">Mercado Pago</label>
+          </div>
+        </div>
+
+        <!-- Sección de Método de Entrega -->
+        <div class="form-section mb-4">
+          <h4 class="mb-3">Método de Entrega</h4>
+          <div class="form-check">
+            <input type="radio" id="delivery" name="deliveryMethod" value="delivery" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
+            <label for="delivery" class="form-check-label">Delivery</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="pickup" name="deliveryMethod" value="pickup" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
+            <label for="pickup" class="form-check-label">Retira por Local</label>
+          </div>
+        </div>
+
+        <!-- Información Adicional -->
+        <div class="form-section mb-4">
+          <h4 class="mb-3">Información Adicional</h4>
+          <textarea class="form-control" rows="4" placeholder="Escribe aquí más detalles o instrucciones adicionales..." id="additionalInfo"></textarea>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <button class="btn btn-success w-100" onclick="redirectToWhatsApp(); return false;">Enviar Pedido</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript para guardar selecciones en localStorage -->
+  <script src="/funcionalidades.js"></script>
+
+</body>
+</html>

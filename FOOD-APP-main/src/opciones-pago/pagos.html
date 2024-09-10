@@ -11,10 +11,10 @@
 
   <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="form-container w-75">
-      <form id="optionsForm">
+      <form  class="align-items-center">
         <!-- Sección de Método de Pago -->
         <div class="form-section mb-4">
-          <h4 class="mb-3">Método de Pago</h4>
+          <h4 class="mb-3 ">Método de Pago</h4>
           <div class="form-check">
             <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="saveSelection('paymentMethod', this.value)">
             <label for="paymentCash" class="form-check-label">Efectivo</label>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Botón de Enviar -->
-        <button class="btn btn-success w-100" onclick="redirectToWhatsApp(); return false;">Enviar Pedido</button>
+        <button class="btn btn-success w-97" onclick="redirectToWhatsApp(); return false;">Enviar Pedido</button>
       </form>
     </div>
   </div>

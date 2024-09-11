@@ -51,5 +51,77 @@ button {
     .card {
         width: 18rem !important; /* Adjust the width for mobile screens */
     }
+}html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-</style>
+
+.container {
+    height: 100%;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.products-container {
+    max-height: 60vh; /* Ajusta este valor según tus necesidades */
+    overflow-y: auto;
+}
+
+.btn {
+    margin-bottom: 10px; /* Espacio entre los botones */
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previene desplazamiento horizontal */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    flex-shrink: 0;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Añade padding para evitar que el contenido toque los bordes */
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.products-container {
+    max-height: 60vh; /* Ajusta este valor según tus necesidades */
+    overflow-y: auto;
+    margin-bottom: 10px; /* Espacio entre la lista y el botón */
+}
+
+.btn {
+    margin-bottom: 10px; /* Espacio entre los botones */
+}
+
+@media (max-width: 768px) {
+    .navbar .container-fluid {
+        justify-content: center;
+    }
+    .form-container {
+        width: 100%;
+        max-width: none; /* Elimina el límite de ancho máximo en pantallas pequeñas */
+    }
+    .products-container {
+        max-height: 50vh; /* Ajusta el valor para pantallas pequeñas si es necesario */
+    }
+}

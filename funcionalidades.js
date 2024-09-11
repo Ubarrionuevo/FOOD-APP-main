@@ -16,8 +16,9 @@ function saveSelection(key, value) {
 }
 
 function redirectToWhatsApp() {
-const phoneNumber = '543834035119'; // Tu número de teléfono en formato internacional
+const phoneNumber = '5493834995063'; // Tu número de teléfono en formato internacional
 let message = 'Hola, me gustaría pedir:\n';
+
 
 // Recuperar productos seleccionados de localStorage
 const storedSelections = JSON.parse(localStorage.getItem('selectedProducts'));
@@ -43,6 +44,8 @@ if (deliveryMethod) {
 const additionalInfo = document.querySelector('textarea').value.trim();
 if (additionalInfo) {
     message += `\n\nInformación Adicional: ${additionalInfo}`;
+    message += `\n\n Hecho por CompraFacil`;
+
 }
 
 // Redirigir a WhatsApp

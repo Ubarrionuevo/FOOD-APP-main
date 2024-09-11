@@ -23,7 +23,7 @@
 button {
     text-align: left; /* Mantener los botones alineados a la izquierda */
 }
-.navbar .svg-container {
+/* .navbar .svg-container {
     display: flex;
     align-items: center;
 }
@@ -33,4 +33,4 @@ button {
 .products-container {
     max-height: 60vh;
     overflow-y: auto;
-}
+} */

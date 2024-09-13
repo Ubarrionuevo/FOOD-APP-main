@@ -20,6 +20,7 @@ const phoneNumber = '5493834995063'; // Tu número de teléfono en formato inter
 let message = 'Hola, me gustaría pedir:\n';
 
 
+
 // Recuperar productos seleccionados de localStorage
 const storedSelections = JSON.parse(localStorage.getItem('selectedProducts'));
 if (storedSelections) {
@@ -47,7 +48,6 @@ if (additionalInfo) {
     message += `\n\n Hecho por CompraFacil`;
 
 }
-
 // Redirigir a WhatsApp
 const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 window.location.href = whatsappURL;

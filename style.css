@@ -148,7 +148,7 @@ body {
     }
     .form-container {
         width: 100%;
-        max-width: none; /* Elimina el límite de ancho máximo en pantallas pequeñas */
+        margin-bottom: 80px; /* Elimina el límite de ancho máximo en pantallas pequeñas */
     }
     .products-container {
         max-height: 50vh; /* Ajusta el valor para pantallas pequeñas si es necesario */
@@ -244,7 +244,7 @@ body {
 }
 
 .con-stock-descuento {
-    background-color: #0c4d1c; /* Color de fondo */
+    background-color: #23ad45; /* Color de fondo */
     color: #ffffff; /* Color del texto */
     padding: 3px 6px; /* Espaciado interno */
     border-radius: 3px; /* Radio de borde */

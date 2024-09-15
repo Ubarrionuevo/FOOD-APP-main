@@ -226,3 +226,27 @@ body {
     font-style: italic;
   }
   
+
+
+  .con-stock {
+    background-color: #77c577; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 3px 6px; /* Espaciado interno */
+    border-radius: 3px; /* Radio de borde */
+}
+
+/* Estilos para el mensaje de "Sin stock" */
+.sin-stock {
+    background-color: #da5c5c; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 3px 6px; /* Espaciado interno */
+    border-radius: 3px; /* Radio de borde */
+}
+
+.con-stock-descuento {
+    background-color: #0c4d1c; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 3px 6px; /* Espaciado interno */
+    border-radius: 3px; /* Radio de borde */
+}
+

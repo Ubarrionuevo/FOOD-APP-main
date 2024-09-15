@@ -88,7 +88,11 @@ button {
 .container {
     height: 100%;
 }
+#mercadito{
 
+margin-left: 20px;
+
+}
 .form-container {
     width: 100%;
     max-width: 600px;
@@ -143,9 +147,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .navbar .container-fluid {
-        justify-content: center;
-    }
+    
     .form-container {
         width: 100%;
         margin-bottom: 80px; /* Elimina el límite de ancho máximo en pantallas pequeñas */
@@ -250,3 +252,19 @@ body {
     border-radius: 3px; /* Radio de borde */
 }
 
+.social-media {
+
+margin-right: 90px;
+
+}
+
+.cartel-llamada {
+    margin-right: 30px;
+    text-decoration: none;
+    color:#f8f9fa;
+
+}
+
+svg {
+    margin-right: 20px;
+}

@@ -74,12 +74,7 @@ button {
     height: auto;
 }
 
-/* Responsive adjustments for small screens */
-@media (max-width: 768px) {
-    .card {
-        width: 18rem !important; /* Adjust the width for mobile screens */
-    }
-}html, body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -88,10 +83,10 @@ button {
 .container {
     height: 100%;
 }
-#mercadito{
 
-margin-left: 20px;
 
+#ig{
+    margin-right: 30px;
 }
 .form-container {
     width: 100%;
@@ -146,15 +141,30 @@ body {
     margin-bottom: 10px; /* Espacio entre los botones */
 }
 
-@media (max-width: 768px) {
-    
+/* @media (max-width: 768px) {
+    #caja-nav{
+        margin-left: 230px;
+        justify-content: center;
+    }
     .form-container {
         width: 100%;
-        margin-bottom: 80px; /* Elimina el límite de ancho máximo en pantallas pequeñas */
+        margin-bottom: 80px;
     }
     .products-container {
-        max-height: 50vh; /* Ajusta el valor para pantallas pequeñas si es necesario */
+        max-height: 50vh; 
     }
+  } */
+
+  /* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    #caja-nav{
+        margin-left: 230px;
+        justify-content: center;
+    }
+    .card {
+        width: 18rem !important; /* Adjust the width for mobile screens */
+    }
+   
 }
 .roboto-thin {
     font-family: "Roboto", sans-serif;
@@ -267,4 +277,9 @@ margin-right: 90px;
 
 svg {
     margin-right: 20px;
+}
+
+#caja-nav{
+    margin-left: 230px;
+    justify-content: center;
 }

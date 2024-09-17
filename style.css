@@ -28,12 +28,11 @@ title{
 
 /* Contenedor centrado y con tamaño ajustado */
 .form-container {
-    width: 80%; /* Ajusta el ancho según tus necesidades */
-    max-width: 600px; /* Ancho máximo para evitar que sea muy grande */
-    background-color: #f8f9fa; /* Color de fondo (opcional) */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    max-width: 900px; /* Ancho máximo para evitar que sea muy grande */
+    padding: 10px;
+    border-radius: 35px;
+    /* box-shadow: 0 0 10px rgba(247, 7, 7, 0.801); */
 }
 
 /* Limitar la altura del contenedor y permitir desplazamiento */
@@ -70,15 +69,15 @@ button {
     align-items: center;
 }
 .card-body img {
-    max-width: 100%;
+    max-width: 00%;
     height: auto;
 }
 
-html, body {
+/* html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
+} */
 
 .container {
     height: 100%;
@@ -90,7 +89,7 @@ html, body {
 }
 .form-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
 }
 
 .products-container {
@@ -164,6 +163,29 @@ body {
     .card {
         width: 18rem !important; /* Adjust the width for mobile screens */
     }
+
+    .card1{
+    
+        height: 10rem;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+       
+    }
+    
+    .card-padre {
+        
+        margin-top: 70px;
+    }
+    
+    .card-title {
+       
+        margin-top: 30px;
+    }
+  .card-body {
+    background-image: url(/img/piedritas.jpg);
+    background-size: cover;
+  }
    
 }
 .roboto-thin {
@@ -283,3 +305,177 @@ svg {
     margin-left: 230px;
     justify-content: center;
 }
+
+#arena {
+padding: 30px;
+background-image:  url(/img/images.jpeg);
+background-size: cover;
+
+}
+
+body {
+    background-color: #f8f9fa; /* Fondo claro */
+}
+
+.container {
+    max-width: 1200px; /* Ancho máximo de la contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.card {
+    border: none; /* Sin borde por defecto */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 1.5rem; /* Espacio entre tarjetas */
+}
+
+.card-body {
+    padding: 2rem; /* Espacio interno */
+}
+
+.card-title button {
+    width: 100%;
+    border: 1px solid #dee2e6; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados en botones */
+}
+
+.btn-outline-dark {
+    color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.list-group-item {
+    border: none; /* Sin borde en los elementos de la lista */
+    padding: 1rem; /* Espacio interno */
+}
+
+.list-group-item .form-check-label {
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item img {
+    margin-right: 1rem; /* Espacio entre imagen y texto */
+}
+
+.collapse {
+    border-top: 1px solid #dee2e6; /* Línea separadora */
+    padding-top: 1rem; /* Espacio superior dentro del colapso */
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dc3545; /* Color de fondo del navbar */
+    padding: 1rem; /* Espacio interno */
+}
+.navbar-brand {
+    color: #fff; /* Color de texto del navbar */
+    font-weight: bold;
+    white-space: nowrap;
+}
+.small-font {
+    font-size: 1.2rem; /* Tamaño de fuente normal */
+}
+
+@media (max-width: 767.98px) {
+    .small-font {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para móviles */
+    }
+    
+ 
+}
+
+
+/*--------------------DISEÑO MOBILE-------------------*/
+
+
+
+#btn-perros , #btn-gato , #btn-otros{
+    padding-top: 90px;
+}
+
+
+
+/* PARA PONER LA IMAGEN A UN LADO Y LA LETRA AL OTRO*/
+
+.form-check {
+    margin-bottom: 1rem; /* Espacio inferior entre elementos */
+}
+
+.d-flex {
+    display: flex; /* Utiliza flexbox para el contenedor */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+img {
+    border-radius: 5px; /* Opcional: bordes redondeados para la imagen */
+}
+
+.form-check-label {
+    font-size: 1rem; /* Tamaño de fuente para el texto */
+}
+
+
+.cabecera-presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+
+}
+ .informacion {
+    background-color: #fff;
+    min-height: 100px;
+    width: 82%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: .25rem;
+    box-shadow: 0 0 15px 1px #000;
+}
+
+div{
+    display: block;
+}
+ .informacion img {
+    width: 60px;
+    object-fit: cover;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.contenido .titulo {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    color: #1a1a1a;
+    padding: 0 0 4px;
+}
+
+ .descripcion {
+    font-size: 13px;
+    letter-spacing: .9px;
+    color: #494949;
+    margin: 0;
+    padding: 0;
+}
+
+
+#catalogo {
+    padding-top:200px;
+}
+
+
+/* -------------------------------------------------------------*/

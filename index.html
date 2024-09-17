@@ -29,236 +29,145 @@
                 font-size: 0.90rem; /* Tamaño de fuente más pequeño para móviles */
             }
         }
+        #btn-perros{
+            
+            position: relative;
+            display: inline-block;
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+            height: 50px; /* Ajusta el tamaño según sea necesario */
+            overflow: hidden;
+            border: none;
+            
+            color: #fff;
+            text-align: center;
+            line-height: 50px; /* Alinea el texto verticalmente */
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #btn-perros img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen para cubrir el botón sin distorsionarse */
+            pointer-events: none; /* Asegúrate de que la imagen no interfiera con los clics en el botón */
+        }
     </style>
     </head>
 <body>
+    <!--NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container-fluid">
             <a class="navbar-brand text-light d-flex" href="/index.html">Mercadito.app</a>
             <a class="navbar-brand text-light d-flex small-font" href="https://mercadito-appp.netlify.app/" target="_blank">¡Quiero un mercadito!</a>
         </div>
     </nav>
-    <!-- Navbar -->
+ <!--NAVBAR -->
 
-    <!-- <nav class="navbar navbar-expand-lg bg-danger">
-        <div class="container-fluid">
-            <a class="navbar-brand text-light d-flex" href="/index.html">Mercadito.app</a>
-            <a class="navbar-brand text-light d-flex" href="https://mercadito-appp.netlify.app/" target="_blank">¡Quiero un mercadito!</a>
+ <div class="cabecera-presentacion ">
+    <div class="informacion">
+        <img src="/img/Imagen de WhatsApp 2024-09-09 a las 22.41.32_67528092.jpg" width="75" height="75">
+        <div class="contenido-empresa">
+            <h2 class="titulo">Pichichus Forrajeria</h1>
+            <p class="descripcion">
+                ¡Bienvenido a nuestro Menu Digital! Disfruta de nuestras deliciosas pizzas, hamburguesas y postres irresistibles. 
+                
+            </p>
+            <div class="info-item"></div>
         </div>
-    </nav> -->
-
-
+    </div>
 </div>
-    <div class="container d-flex justify-content-center align-items-center">
-        <!-- <div>  <h1>video</h1> </div> -->
+
+    <div class="container d-flex justify-content-center align-items-center" id="catalogo">
+       
         <div class="form-container">
             <form>
                 <!-- Contenedor de productos con scroll -->
                 <div class="products-container">
+
+
+                    
+
+                    <div class="perros mb-4">
+                            <li class="list-group-item mb-4 " id="perros" >
+                                
+                                <button  id="btn-perros"   type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product1">
+                                    <img src="/img/perro fondo.jpg" alt="">
+
+                                    <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Alimentos para Perros</p>
+                                </button>
+                               
+                           
+                            </li>
+                            <div id="product1" class="collapse mt-3">
+                                <div class="form-check">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/img/piedritas sanitarias cat way.jpg " width="85" height="auto" class="me-2"> 
+                                        <label for="product1A1" class="form-check-label">ARENA SANITARIAS LIMPCAT-LAVANDA X 4KG</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="product1" class="collapse mt-3">
+                                <div class="form-check">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/img/gran campeon 21 k.jpg" width="85" height="100%" alt="" class="me-2">
+                                        <!-- <input type="checkbox" id="product4A1" name="product4" value="GRAN CAMPEON MIX PERRO X 21+3KG" class="form-check-input" onchange="saveSelectedProducts()"> -->
+                                        <label for="product4A1" class="form-check-label">GRAN CAMPEON MIX PERRO X 21+3KG - Bs 29,600 <span class="con-stock ml-2">Stock</span></label>
+                                    </div>
+                                  
+                                </div>
+                             
+                            </div>
+                            <div id="product1" class="collapse mt-3">
+                                <div class="form-check">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/img/estampa.jpg" width="85" height="100%" alt="" class="me-2">
+                                        <!-- <input type="checkbox" id="product6A1" name="product6" value="ESTAMPA PERROS ADULTOS/CRIADORES X 20KG" class="form-check-input" onchange="saveSelectedProducts()"> -->
+                                        <label for="product6A1" class="form-check-label">ESTAMPA PERROS ADULTOS/CRIADORES X 20KG - Bs 29,700 <span class="con-stock ml-2">Stock</span></label>
+                                    </div>
+                                   
+                                </div>
+                              
+                            </div>
+                    </div>
+                    <div class="gatos">
+                       
+                        
+                            <li class="list-group-item mb-4"  >
+                                <button  id="btn-gato"   type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product2">Alimentos para gatos
+                            
+                                 
+                                </button>
+                            </li>
+                            <div id="product2" class="collapse mt-3">
+                                <div class="form-check">
+                                    <input type="checkbox" id="product5A1" name="product5" value="FISHY GATO PESCADO X 15KG" class="form-check-input" onchange="saveSelectedProducts()">
+                                    <label for="product5A1" class="form-check-label">FISHY GATO PESCADO X 15KG - Bs 21,800 <span class="con-stock ml-2">Stock</span></label>
+                                </div>
+                              
+                            </div>
+                    </div>
+                    <div class="otros">
+                       
+                            <li class="list-group-item mb-4"  >
+                                <button id="btn-otros" type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product3"><p>Otros</p>
+                                 
+                                </button>
+                            </li>
+                            <div id="product3" class="collapse mt-3">
+                                <div class="form-check">
+                                    <label for="product2A1" class="form-check-label">PIEDRITAS SANITARIAS CAT WAY X 9.2LTS  <span class="con-stock ml-2">Stock</span></label>
+                                    <input type="checkbox" id="product2A1" name="product2" value="PIEDRITAS SANITARIAS CAT WAY X 9.2LTS" class="form-check-input" onchange="saveSelectedProducts()">
+                                    
+                                </div>
+                            </div>
+                    </div>
                     <ul class="list-group">
                         <!-- Producto 1 -->
                        <!-- Producto 1 -->
-<!-- ARENAS SANITARIAS  -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product1">PIEDRITAS SANITARIAS LIMPCAT
-
-        <img src="/img/piedritas sanitarias.jpg" width="60px" alt="" class="rounded-5">
-
-    </button>
-    <div id="product1" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product1A1" name="product1" value="ARENA SANITARIAS LIMPCAT-LAVANDA X 4KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product1A1" class="form-check-label">ARENA SANITARIAS LIMPCAT-LAVANDA X 4KG   <span class="con-stock ml-2">Stock</span></label>
-        </div>
-        
-    </div>
-</li>
-
-<!-- PIEDRITAS SANITARIAS -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product2">PIEDRITAS SANITARIAS CAT WAY
-        <img src="/img/piedritas sanitarias cat way.jpg" width="60px" alt="" class="rounded-5">
-
-
-    </button>
-    <div id="product2" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product2A1" name="product2" value="PIEDRITAS SANITARIAS CAT WAY X 9.2LTS" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product2A1" class="form-check-label">PIEDRITAS SANITARIAS CAT WAY X 9.2LTS  <span class="con-stock ml-2">Stock</span></label>
-        </div>
-    </div>
-</li>
-
-<!-- Producto 3 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100 mr-3" data-bs-toggle="collapse" data-bs-target="#product3">MATUTE
-        <img src="/img/MATUTE.jpg" width="60px" alt="" class="rounded-5">
-
-    </button>
-    <div id="product3" class="collapse mt-3">
-
-
-        <div>
-            <p class="text-center"><strong>En desarrollo </strong></p>
-        </div>
-        <!-- <div class="form-check">
-            <input type="checkbox" id="product3A1" name="product3" value="GRAN CAMPEON CACHORRO X 10KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product3A1" class="form-check-label">MATUTE X 10 KG  <span class="con-stock ml-2">Stock</span></label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="product3A2" name="product3" value="GRAN CAMPEON CACHORRO X 15KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product3A2" class="form-check-label">MATUTE X 15 KG <span class="con-stock ml-2">Stock</span></label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="product3A2" name="product3" value="GRAN CAMPEON CACHORRO X 15KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product3A2" class="form-check-label">MATUTE X 20 KG <span class="con-stock ml-2">Stock</span></label>
-        </div> -->
-    </div>
-</li>
-
-<!-- Producto 4 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100 mr-2" data-bs-toggle="collapse" data-bs-target="#product4">GRAN CAMPEON MIX
-        <img src="/img/gran campeon 21 k.jpg" width="60px" alt="" class="rounded-5">
-
-    </button>
-    <div id="product4" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product4A1" name="product4" value="GRAN CAMPEON MIX PERRO X 21+3KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product4A1" class="form-check-label">GRAN CAMPEON MIX PERRO X 21+3KG - Bs 29,600 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-     
-    </div>
-</li>
-
-<!-- Producto 5 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product5">FISHY GATO
-        <img src="/img/fyshi_nuevo-removebg-preview.png" width="50px" alt="" class="rounded-5">
-    </button>
-    <div id="product5" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product5A1" name="product5" value="FISHY GATO PESCADO X 15KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product5A1" class="form-check-label">FISHY GATO PESCADO X 15KG - Bs 21,800 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-      
-    </div>
-</li>
-
-<!-- Producto 6 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100 mr-2" data-bs-toggle="collapse" data-bs-target="#product6">ESTAMPA PERROS
-        <img src="/img/estampa.jpg" width="60px" alt="" class="rounded-5 ml-2 ">
-    </button>
-    <div id="product6" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product6A1" name="product6" value="ESTAMPA PERROS ADULTOS/CRIADORES X 20KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product6A1" class="form-check-label">ESTAMPA PERROS ADULTOS/CRIADORES X 20KG - Bs 29,700 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-      
-    </div>
-</li>
-
-<!-- Producto 7 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product7">PACHA PERRO
-        <img src="/img/pacha perro adulto.jpg" width="60px" alt="" class="rounded-5">
-
-    </button>
-    <div id="product7" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product7A1" name="product7" value="PACHA PERRO MIX X 10KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product7A1" class="form-check-label">PACHA PERRO MIX X 10KG - Bs 17,400 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="product7A2" name="product7" value="PACHA PERRO CACHORRO X 10KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product7A2" class="form-check-label">PACHA PERRO CACHORRO X 10KG - Bs 19,200 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-    </div>
-</li>
-
-<!-- Producto 8 -->
-<!-- <li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product8">VAGONETA GATO</button>
-    <div id="product8" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product8A1" name="product8" value="VAGONETA GATO X 20KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product8A1" class="form-check-label">VAGONETA GATO X 20KG - Bs 36,800</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="product8A2" name="product8" value="VAGONETA GATO X 7KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product8A2" class="form-check-label">VAGONETA GATO X 7KG - Bs 15,200</label>
-        </div>
-    </div>
-</li> -->
-
-<!-- Producto 9 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product9">
-    
-        VAGONETA PERRO
-        <img src="/img/vagoneta.jpg" width="60px" alt="" class="rounded-5">
-    </button>
-    
-
-    <div id="product9" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product9A1" name="product9" value="VAGONETA PERRO MIX X 21KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product9A1" class="form-check-label">VAGONETA PERRO MIX X 21KG - Bs 27,600 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-    </div>
-</li>
-
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product16">VAGONETA GOURMET
-
-        <img src="/img/GOURMET.jpg" width="60px" alt="" class="rounded-5">
-
-
-    </button>
-    <div id="product16" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product16A1" name="product16" value="VAGONETA GOURMET" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product16A1" class="form-check-label">VAGONETA GOURMET X 20 KG B$ 36800 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-    </div>
-</li>
-
-<!-- Producto 10 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product10">PRO PLAN GATO
-        <img src="/img/pro-plan-gato.jpg" width="60px" alt="" class="rounded-5">
-
-    </button>
-    <div id="product10" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product10A1" name="product10" value="PRO PLAN GATO URINARY X 7.5KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product10A1" class="form-check-label">PRO PLAN GATO URINARY X 7.5KG - Bs 70,610 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="product10A2" name="product10" value="PRO PLAN GATO SALMON X 3KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product10A2" class="form-check-label">PRO PLAN GATO SALMON X 3KG - Bs 32,850 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" id="product10A3" name="product10" value="PRO PLAN GATO PAVO X 3KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product10A3" class="form-check-label">PRO PLAN GATO PAVO X 3KG - Bs 32,850 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-    </div>
-</li>
-
-<!-- Producto 11 -->
-<li class="list-group-item mb-4">
-    <button type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product11">PRO PLAN PERRO ADULTO
-        <img src="/img/pro-plan-perro.jpg" width="50px" alt="" class="rounded-5">
-
-    </button>
-    <div id="product11" class="collapse mt-3">
-        <div class="form-check">
-            <input type="checkbox" id="product11A1" name="product11" value="PRO PLAN PERRO ADULTO 22KG" class="form-check-input" onchange="saveSelectedProducts()">
-            <label for="product11A1" class="form-check-label">PRO PLAN PERRO ADULTO 22KG - Bs 104,410 <span class="con-stock ml-2">Stock</span></label>
-        </div>
-    </div>
-</li>
 
 
 <!-- Producto 12 -->

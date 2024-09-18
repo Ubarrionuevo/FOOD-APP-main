@@ -55,6 +55,58 @@
             object-fit: cover; /* Ajusta la imagen para cubrir el botón sin distorsionarse */
             pointer-events: none; /* Asegúrate de que la imagen no interfiera con los clics en el botón */
         }
+        #btn-gato{
+            
+            position: relative;
+            display: inline-block;
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+            height: 50px; /* Ajusta el tamaño según sea necesario */
+            overflow: hidden;
+            border: none;
+            
+            color: #fff;
+            text-align: center;
+            line-height: 50px; /* Alinea el texto verticalmente */
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #btn-gato img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen para cubrir el botón sin distorsionarse */
+            pointer-events: none; /* Asegúrate de que la imagen no interfiera con los clics en el botón */
+        }
+        #btn-otros{
+            
+            position: relative;
+            display: inline-block;
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+            height: 50px; /* Ajusta el tamaño según sea necesario */
+            overflow: hidden;
+            border: none;
+            
+            color: #fff;
+            text-align: center;
+            line-height: 50px; /* Alinea el texto verticalmente */
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #btn-otros img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen para cubrir el botón sin distorsionarse */
+            pointer-events: none; /* Asegúrate de que la imagen no interfiera con los clics en el botón */
+        }
     </style>
     </head>
 <body>
@@ -87,15 +139,11 @@
             <form>
                 <!-- Contenedor de productos con scroll -->
                 <div class="products-container">
-
-
-                    
-
-                    <div class="perros mb-4">
+                      <div class="perros mb-4">
                             <li class="list-group-item mb-4 " id="perros" >
                                 
                                 <button  id="btn-perros"   type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product1">
-                                    <img src="/img/perro fondo.jpg" alt="">
+                                    <img src="/img/perro fondo.jpg" width="85" height="auto" class="me-2">
 
                                     <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Alimentos para Perros</p>
                                 </button>
@@ -133,28 +181,28 @@
                               
                             </div>
                     </div>
-                    <!-- <div class="gatos">
-                       
-                        
-                            <li class="list-group-item mb-4"  >
-                                <button  id="btn-gato"   type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product2">Alimentos para gatos
-                            
-                                 
-                                </button>
-                            </li>
-                            <div id="product2" class="collapse mt-3">
+                    <div class="gatos">
+                        <li class="list-group-item mb-4" >
+                            <button  id="btn-gato" type="button" class="btn  w-100" data-bs-toggle="collapse" data-bs-target="#product2">
+                                <img src="/img/gatos-fondo.jpg" width="85" height="auto" class="me-2">
+                                <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Alimentos para gatos</p>
+                            </button>
+                            <div id="product2" class="collapse ">
                                 <div class="form-check">
                                     <input type="checkbox" id="product5A1" name="product5" value="FISHY GATO PESCADO X 15KG" class="form-check-input" onchange="saveSelectedProducts()">
                                     <label for="product5A1" class="form-check-label">FISHY GATO PESCADO X 15KG - Bs 21,800 <span class="con-stock ml-2">Stock</span></label>
                                 </div>
                               
                             </div>
+                        </li>
+                         
                     </div>
                     <div class="otros">
                        
                             <li class="list-group-item mb-4"  >
-                                <button id="btn-otros" type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product3"><p>Otros</p>
-                                 
+                                <button id="btn-otros" type="button" class="btn btn-outline-dark w-100" data-bs-toggle="collapse" data-bs-target="#product3">
+                                    <img src="/img/acesorios.jpg" width="85" height="auto" class="me-2">
+                                    <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Alimentos para gatos</p>
                                 </button>
                             </li>
                             <div id="product3" class="collapse mt-3">
@@ -164,7 +212,7 @@
                                     
                                 </div>
                             </div>
-                    </div> -->
+                    </div>
                     <ul class="list-group">
                         <!-- Producto 1 -->
                        <!-- Producto 1 -->

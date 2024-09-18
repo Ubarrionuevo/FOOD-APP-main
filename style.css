@@ -339,15 +339,8 @@ body {
     border-radius: 10px; /* Bordes redondeados en botones */
 }
 
-.btn-outline-dark {
-    color: #343a40;
-    border-color: #343a40;
-}
 
-.btn-outline-dark:hover {
-    background-color: #343a40;
-    color: #fff;
-}
+
 
 .list-group-item {
     border: none; /* Sin borde en los elementos de la lista */
@@ -399,7 +392,7 @@ body {
 
 
 
-#btn-perros , #btn-gato , #btn-otros{
+#btn-perros , #btn-gato, #btn-otros{
     padding-top: 90px;
 }
 

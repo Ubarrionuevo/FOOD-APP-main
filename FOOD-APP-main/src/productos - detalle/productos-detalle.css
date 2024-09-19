@@ -20,7 +20,7 @@
 
 @media (max-width: 767.98px) {
     .small-font {
-        font-size: 1rem; /* Tamaño de fuente más pequeño para móviles */
+        font-size: 0.90rem; /* Tamaño de fuente más pequeño para móviles */
     }
     
  

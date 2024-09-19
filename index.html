@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
     <link href="/style.css" rel="stylesheet">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -11,102 +13,72 @@
 
     <title>Pichichus Forrajeria</title>
     <style>
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar-brand {
-            white-space: nowrap;
-        }
-         /* Tamaño de fuente normal para la versión web */
-         .small-font {
-            font-size: 1.1rem; /* Tamaño de fuente normal */
-        }
-        /* Tamaño de fuente pequeño para la versión móvil */
-        @media (max-width: 767.98px) { /* Ajusta el breakpoint según sea necesario */
-            .small-font {
-                font-size: 0.90rem; /* Tamaño de fuente más pequeño para móviles */
-            }
-        }
-        #btn-perros{
-            
-            position: relative;
-            display: inline-block;
-            width: 150px; /* Ajusta el tamaño según sea necesario */
-            height: 50px; /* Ajusta el tamaño según sea necesario */
-            overflow: hidden;
-            border: none;
-            
-            color: #fff;
-            text-align: center;
-            line-height: 50px; /* Alinea el texto verticalmente */
-            font-size: 16px;
-            cursor: pointer;
-        }
 
-        #btn-perros img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ajusta la imagen para cubrir el botón sin distorsionarse */
-            pointer-events: none; /* Asegúrate de que la imagen no interfiera con los clics en el botón */
-        }
-        #btn-gato{
-            
-            position: relative;
-            display: inline-block;
-            width: 150px; /* Ajusta el tamaño según sea necesario */
-            height: 50px; /* Ajusta el tamaño según sea necesario */
-            overflow: hidden;
-            border: none;
-            
-            color: #fff;
-            text-align: center;
-            line-height: 50px; /* Alinea el texto verticalmente */
-            font-size: 16px;
-            cursor: pointer;
-        }
+/* Media query para Samsung Galaxy A30, A30s */
+@media only screen and (min-width: 360px) and (max-width: 414px) and (orientation: portrait) {
+  .cabecera-presentacion {
+    padding: 20px;
+    color: black;
+  }
+}
 
-        #btn-gato img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ajusta la imagen para cubrir el botón sin distorsionarse */
-            pointer-events: none; /* Asegúrate de que la imagen no interfiera con los clics en el botón */
-        }
-        #btn-otros{
-            
-            position: relative;
-            display: inline-block;
-            width: 150px; /* Ajusta el tamaño según sea necesario */
-            height: 50px; /* Ajusta el tamaño según sea necesario */
-            overflow: hidden;
-            border: none;
-            
-            color: #fff;
-            text-align: center;
-            line-height: 50px; /* Alinea el texto verticalmente */
-            font-size: 16px;
-            cursor: pointer;
-        }
 
-        #btn-otros img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ajusta la imagen para cubrir el botón sin distorsionarse */
-            pointer-events: none; /* Asegúrate de que la imagen no interfiera con los clics en el botón */
-        }
+
+
+
+
+/* Media query para dispositivos más pequeños */
+@media screen and (max-width: 359px) {
+  .cabecera-presentacion {
+    padding: 20px;
+    color: red;
+  }
+}
+
+/* Media query para dispositivos Galaxy (360px a 414px) en modo retrato */
+@media only screen and (min-width: 360px) and (max-width: 414px) and (orientation: portrait) {
+  .cabecera-presentacion {
+    padding: 10px;
+    color: aquamarine;
+  }
+}
+
+/* Media query para dispositivos medianos (415px a 768px) */
+@media screen and (min-width: 415px) and (max-width: 768px) {
+  .cabecera-presentacion {
+    padding: 15px;
+    color: blue;
+  }
+}
+
+/* Media query para dispositivos más grandes (769px a 1440px) */
+@media only screen and (min-width: 769px) and (max-width: 1440px) {
+  .cabecera-presentacion {
+    padding: 0;
+    margin: 0;
+    color: green;
+  }
+
+  .small-font {
+    font-size: 0.90rem;
+  }
+
+  .informacion {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .products-container {
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-top: 90px;
+    max-height: 300px; /* Ajusta la altura máxima según necesites */
+    overflow-y: unset;
+  }
+}
+
+ 
     </style>
     </head>
 <body>
@@ -136,15 +108,15 @@
 <div class="container d-flex justify-content-center align-items-center" id="catalogo">
        
       <div class="form-container row">
-        <form>
+        <form class="formulario">
             <!-- Contenedor de productos con scroll -->
             <div class="products-container">
                 <!-- Sección Perros -->
                 <div class="perros mb-4">
                     <li class="list-group-item mb-4">
                       <a href="/FOOD-APP-main/src/catalogo/catalogo.html">
-                        <button id="btn-perros" type="button" class="btn w-100" data-bs-toggle="collapse" data-bs-target="#product1">
-                            <img src="/img/perro fondo.jpg" width="85" height="auto" class="me-2">
+                        <button id="btn-perros" type="button" class="btn w-100 h-25" data-bs-toggle="collapse" data-bs-target="#product1">
+                            <img src="/img/perro fondo.jpg" width="35" height="auto" class="me-2">
                             <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Alimentos para Perros</p>
                         </button>
                       </a>
@@ -186,5 +158,6 @@
 
 </div>
     <script src="/funcionalidades.js"></script>
+
 </body>
 </html>

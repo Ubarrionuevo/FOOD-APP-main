@@ -5,8 +5,14 @@
     font-style: normal;
    
 }
+
+.me-2 {
+    filter: brightness(0.6); /* Ajusta el valor según tu necesidad */
+}
+
 #enviar{
 
+    padding-bottom: 0;
     font-family: "Roboto", sans-serif;
     font-weight: 100;
     font-style: normal;
@@ -38,7 +44,8 @@ title{
 
 /* Limitar la altura del contenedor y permitir desplazamiento */
 .products-container {
-    max-height: 400px; /* Ajusta la altura máxima según necesites */
+    margin-top: 90px;
+    max-height: 900px; /* Ajusta la altura máxima según necesites */
     overflow-y: auto;  /* Scroll vertical cuando sea necesario */
     position: relative;
 }
@@ -99,6 +106,7 @@ button {
 .products-container {
     max-height: 60vh; /* Ajusta este valor según tus necesidades */
     overflow-y: auto;
+   
 }
 
 .btn {
@@ -138,6 +146,7 @@ body {
     max-height: 60vh; /* Ajusta este valor según tus necesidades */
     overflow-y: auto;
     margin-bottom: 10px; /* Espacio entre la lista y el botón */
+ 
 }
 
 .btn {
@@ -386,8 +395,13 @@ body {
 
 #btn-perros , #btn-gato, #btn-otros{
     padding-top: 90px;
+    
 }
 
+.form {
+    padding: 0;
+   
+}
 
 
 /* PARA PONER LA IMAGEN A UN LADO Y LA LETRA AL OTRO*/
@@ -468,25 +482,6 @@ div{
     position: relative; /* Asegura que el contenedor sea el referente de sus elementos internos */
 }
 
-.perros .collapse,
-.gatos .collapse,
-.otros .collapse {
-    transition: height 0.1s ease; /* Añade una transición suave al abrir/cerrar */
-    display: block;
-    overflow: hidden; /* Asegura que el contenido no se salga de los límites al colapsar */
-}
-
-.perros .collapse.show,
-.gatos .collapse.show,
-.otros .collapse.show {
-    height: auto; /* Asegura que la altura se ajuste al contenido al abrir */
-}
-
-.perros .collapse:not(.show),
-.gatos .collapse:not(.show),
-.otros .collapse:not(.show) {
-    height: 0; /* Establece la altura a 0 cuando está colapsado */
-}
 .perros img,
 .gatos img,
 .otros img {
@@ -494,23 +489,14 @@ div{
     height: auto; /* Mantiene la proporción de las imágenes */
 }
 
-.perros .list-group-item,
-.gatos .list-group-item,
-.otros .list-group-item {
-    overflow: hidden; /* Asegura que el contenido no se desborde */
+
+
+
+.descuento {
+    font-weight: bold
 }
 
-.perros .form-check,
-.gatos .form-check,
-.otros .form-check {
-    margin-bottom: 10px; /* Añade un margen inferior para espaciar los elementos */
-}
 
-.collapse {
-    transition: height 0.3s ease; /* Añade una transición suave al abrir/cerrar */
-    display: block;
-    overflow: hidden; /* Asegura que el contenido no se salga de los límites al colapsar */
-}
 
 /* -------------------------------------------------------------*/
 

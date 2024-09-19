@@ -133,7 +133,7 @@
     </div>
 </div>
 
-    <div class="container d-flex justify-content-center align-items-center" id="catalogo">
+<div class="container d-flex justify-content-center align-items-center" id="catalogo">
        
       <div class="form-container row">
         <form>
@@ -142,7 +142,7 @@
                 <!-- Sección Perros -->
                 <div class="perros mb-4">
                     <li class="list-group-item mb-4">
-                      <a href="/catalogo/catalogo.html">
+                      <a href="/FOOD-APP-main/src/catalogo/catalogo.html">
                         <button id="btn-perros" type="button" class="btn w-100" data-bs-toggle="collapse" data-bs-target="#product1">
                             <img src="/img/perro fondo.jpg" width="85" height="auto" class="me-2">
                             <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Alimentos para Perros</p>
@@ -156,43 +156,35 @@
                 <!-- Sección Gatos -->
                 <div class="gatos mb-4">
                     <li class="list-group-item mb-4">
-                      <a href="/catalogo/catalogo.html"></a>
-                       
-                        <div id="product2" class="collapse mt-3">
-                            <div class="form-check">
-                                <input type="checkbox" id="product5A1" name="product5" value="FISHY GATO PESCADO X 15KG" class="form-check-input" onchange="saveSelectedProducts()">
-                                <label for="product5A1" class="form-check-label">FISHY GATO PESCADO X 15KG - Bs 21,800 <span class="con-stock ml-2">Stock</span></label>
-                            </div>
-                        </div>
+                    <a href="/catalogo/catalogo.html">
+                      <button id="btn-perros" type="button" class="btn w-100" data-bs-toggle="collapse" data-bs-target="#product1">
+                        <img src="/img/gatos-fondo.jpg" width="85" height="auto" class="me-2">
+                        <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Alimentos para Perros</p>
+                    </button></a>
+                     
+                    
                     </li>
                 </div>
     
                 <!-- Sección Otros -->
-                <div class="otros mb-4">
+                <div class="otros mb-4"></div>
                     <li class="list-group-item mb-4">
                         <button id="btn-otros" type="button" class="btn w-100" data-bs-toggle="collapse" data-bs-target="#product3">
                             <img src="/img/acesorios.jpg" width="85" height="auto" class="me-2">
                             <p class="position-absolute top-50 start-50 translate-middle fw-bolder">Otros</p>
                         </button>
-                        <div id="product3" class="collapse mt-3">
-                            <div class="form-check">
-                                <label for="product2A1" class="form-check-label">PIEDRITAS SANITARIAS CAT WAY X 9.2LTS <span class="con-stock ml-2">Stock</span></label>
-                                <input type="checkbox" id="product2A1" name="product2" value="PIEDRITAS SANITARIAS CAT WAY X 9.2LTS" class="form-check-input" onchange="saveSelectedProducts()">
-                            </div>
-                        </div>
+                      
                     </li>
                 </div>
             </div>
-    
-            <!-- Botón de Enviar -->
-            <!-- <a type="submit" class="btn btn-danger w-100 p-3 text-decoration-none" id="enviar" href="/FOOD-APP-main/src/opciones-pago/pagos.html">Mercadito</a> -->
         </form>
     </div>
+</div>
     
-    
-    
-    </div>
+<div class="p-1" id="btn-descuento">
+    <a type="submit" class="btn btn-danger w-100 p-3 text-decoration-none" id="enviar" href="/FOOD-APP-main/src/opciones-pago/pagos.html"><h4 class="descuento">30% de descuento </h2>con tu primer mercadito</a> 
 
+</div>
     <script src="/funcionalidades.js"></script>
 </body>
 </html>

@@ -1,0 +1,293 @@
+.navbar {
+    flex-shrink: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dc3545; /* Color de fondo del navbar */
+    padding: 1rem; /* Espacio interno */
+}
+.navbar-brand {
+    color: #fff; /* Color de texto del navbar */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.small-font {
+    font-size: 1.2rem; /* Tamaño de fuente normal */
+}
+
+@media (max-width: 767.98px) {
+    .small-font {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para móviles */
+    }
+    
+ 
+}
+#btn-perros , #btn-gato, #btn-otros{
+    padding-top: 90px;
+}
+
+
+
+/* PARA PONER LA IMAGEN A UN LADO Y LA LETRA AL OTRO*/
+
+.form-check {
+    margin-bottom: 1rem; /* Espacio inferior entre elementos */
+}
+
+.d-flex {
+    display: flex; /* Utiliza flexbox para el contenedor */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+img {
+    border-radius: 5px; /* Opcional: bordes redondeados para la imagen */
+}
+
+.form-check-label {
+    font-size: 1rem; /* Tamaño de fuente para el texto */
+}
+
+
+.cabecera-presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+
+}
+ .informacion {
+    background-color: #fff;
+    min-height: 100px;
+    width: 82%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: .25rem;
+    box-shadow: 0 0 15px 1px #000;
+}
+
+div{
+    display: block;
+}
+ .informacion img {
+    width: 60px;
+    object-fit: cover;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.contenido .titulo {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    color: #1a1a1a;
+    padding: 0 0 4px;
+}
+
+ .descripcion {
+    font-size: 13px;
+    letter-spacing: .9px;
+    color: #494949;
+    margin: 0;
+    padding: 0;
+}
+
+
+#catalogo {
+    margin-top:40px;
+}
+
+.products-container {
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative; /* Asegura que el contenedor sea el referente de sus elementos internos */
+}
+
+.perros .collapse,
+.gatos .collapse,
+.otros .collapse {
+    transition: height 0.1s ease; /* Añade una transición suave al abrir/cerrar */
+    display: block;
+    overflow: hidden; /* Asegura que el contenido no se salga de los límites al colapsar */
+}
+
+.perros .collapse.show,
+.gatos .collapse.show,
+.otros .collapse.show {
+    height: auto; /* Asegura que la altura se ajuste al contenido al abrir */
+}
+
+.perros .collapse:not(.show),
+.gatos .collapse:not(.show),
+.otros .collapse:not(.show) {
+    height: 0; /* Establece la altura a 0 cuando está colapsado */
+}
+.perros img,
+.gatos img,
+.otros img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.perros .list-group-item,
+.gatos .list-group-item,
+.otros .list-group-item {
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.perros .form-check,
+.gatos .form-check,
+.otros .form-check {
+    margin-bottom: 10px; /* Añade un margen inferior para espaciar los elementos */
+}
+
+.collapse {
+    transition: height 0.3s ease; /* Añade una transición suave al abrir/cerrar */
+    display: block;
+    overflow: hidden; /* Asegura que el contenido no se salga de los límites al colapsar */
+}
+
+/* -------------------------------------------------------------*/
+
+
+
+/*PAGINA DE LOS PRODUCTOS DE MERCADITO*/
+
+
+#catalogo {
+    padding-top:10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.horizontal-slider {
+    background-color: #0056b3;
+   
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 40px;
+}
+
+.horizontal-slider-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn.solid {
+    background-color: #0056b3;
+    color: white;
+}
+
+.btn.outline {
+    background-color: white;
+    color: #0056b3;
+    border: 2px solid #0056b3;
+}
+
+
+.ui-title {
+    display: flex;
+    align-items: center;
+}
+
+.ui-item-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.icon-back {
+    width: 20px;
+    height: 20px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(135deg);
+    margin-right: 10px;
+}
+
+.category-title {
+    font-size: 16px;
+    color: #000;
+}
+
+.search-container {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limita el ancho del buscador */
+    width: 1000%; /* Hace que se ajuste al tamaño de la pantalla */
+}
+
+.search-input {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    width: 80%; /* Ajusta el ancho para que sea más compacto */
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-btn {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #c0392b;
+}
+
+.item-list-grid[_ngcontent-ng-c3271226194] {
+    padding: 0 1rem 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.2rem 1.2rem;
+}
+
+.item-list-grid {
+    padding: 0 1rem 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.2rem 1.2rem;
+}
+
+
+#producto {
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px -10px #96aab480;
+}
+
+.formulario{
+    margin-left: -5;
+    margin-right: -5;
+} 

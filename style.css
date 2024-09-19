@@ -28,10 +28,11 @@ title{
 
 /* Contenedor centrado y con tamaño ajustado */
 .form-container {
-    width: 100%; /* Ajusta el ancho según tus necesidades */
-    max-width: 900px; /* Ancho máximo para evitar que sea muy grande */
-    padding: 10px;
+    width: 150%; /* Ajusta el ancho según tus necesidades */
+    max-width: 400px; /* Ancho máximo para evitar que sea muy grande */
     border-radius: 35px;
+    position : relative;
+    
     /* box-shadow: 0 0 10px rgba(247, 7, 7, 0.801); */
 }
 
@@ -39,10 +40,12 @@ title{
 .products-container {
     max-height: 400px; /* Ajusta la altura máxima según necesites */
     overflow-y: auto;  /* Scroll vertical cuando sea necesario */
+    position: relative;
 }
 
 /* Alinear verticalmente y centrar el contenedor */
 .container {
+
     height: 100vh; /* La altura del contenedor padre para centrar verticalmente */
 }
 
@@ -84,10 +87,11 @@ button {
 }
 
 
-#ig{
+/* #ig{
     margin-right: 30px;
-}
+} */
 .form-container {
+  
     width: 100%;
     max-width: 900px;
 }
@@ -341,26 +345,14 @@ body {
 
 
 
-
-.list-group-item {
-    border: none; /* Sin borde en los elementos de la lista */
-    padding: 1rem; /* Espacio interno */
-}
-
 .list-group-item .form-check-label {
-    display: flex;
+    
     align-items: center;
 }
 
 .list-group-item img {
     margin-right: 1rem; /* Espacio entre imagen y texto */
 }
-
-.collapse {
-    border-top: 1px solid #dee2e6; /* Línea separadora */
-    padding-top: 1rem; /* Espacio superior dentro del colapso */
-}
-
 
 
 .navbar {
@@ -470,5 +462,192 @@ div{
     padding-top:120px;
 }
 
+.products-container {
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative; /* Asegura que el contenedor sea el referente de sus elementos internos */
+}
+
+.perros .collapse,
+.gatos .collapse,
+.otros .collapse {
+    transition: height 0.1s ease; /* Añade una transición suave al abrir/cerrar */
+    display: block;
+    overflow: hidden; /* Asegura que el contenido no se salga de los límites al colapsar */
+}
+
+.perros .collapse.show,
+.gatos .collapse.show,
+.otros .collapse.show {
+    height: auto; /* Asegura que la altura se ajuste al contenido al abrir */
+}
+
+.perros .collapse:not(.show),
+.gatos .collapse:not(.show),
+.otros .collapse:not(.show) {
+    height: 0; /* Establece la altura a 0 cuando está colapsado */
+}
+.perros img,
+.gatos img,
+.otros img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.perros .list-group-item,
+.gatos .list-group-item,
+.otros .list-group-item {
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.perros .form-check,
+.gatos .form-check,
+.otros .form-check {
+    margin-bottom: 10px; /* Añade un margen inferior para espaciar los elementos */
+}
+
+.collapse {
+    transition: height 0.3s ease; /* Añade una transición suave al abrir/cerrar */
+    display: block;
+    overflow: hidden; /* Asegura que el contenido no se salga de los límites al colapsar */
+}
 
 /* -------------------------------------------------------------*/
+
+
+
+/*PAGINA DE LOS PRODUCTOS DE MERCADITO*/
+
+
+#catalogo {
+    padding-top:10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.horizontal-slider {
+    background-color: #0056b3;
+   
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 40px;
+}
+
+.horizontal-slider-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn.solid {
+    background-color: #0056b3;
+    color: white;
+}
+
+.btn.outline {
+    background-color: white;
+    color: #0056b3;
+    border: 2px solid #0056b3;
+}
+
+
+.ui-title {
+    display: flex;
+    align-items: center;
+}
+
+.ui-item-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.icon-back {
+    width: 20px;
+    height: 20px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(135deg);
+    margin-right: 10px;
+}
+
+.category-title {
+    font-size: 16px;
+    color: #000;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limita el ancho del buscador */
+    width: 100%; /* Hace que se ajuste al tamaño de la pantalla */
+}
+
+.search-input {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    width: 80%; /* Ajusta el ancho para que sea más compacto */
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-btn {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #c0392b;
+}
+
+.item-list-grid[_ngcontent-ng-c3271226194] {
+    padding: 0 1rem 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.2rem 1.2rem;
+}
+
+.item-list-grid {
+    padding: 0 1rem 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.2rem 1.2rem;
+}
+
+
+#producto {
+    margin-bottom: 20px;
+    box-shadow: 0 3px 25px -10px #96aab480;
+}
+
+
+.search-container {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+/*---------------------------------------------------*/

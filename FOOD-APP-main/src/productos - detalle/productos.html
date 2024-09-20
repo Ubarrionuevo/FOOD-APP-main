@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <title>Pichichus Forrajeria</title>
-    <style>
+    <!-- <style>
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -28,14 +28,14 @@
             }
         }
     
-    </style>
+    </style> -->
     </head>
 <body>
     <!--NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container-fluid">
             <a class="navbar-brand text-light d-flex" href="/index.html">Mercadito.app</a>
-            <a class="navbar-brand text-light d-flex small-font" href="https://mercadito-appp.netlify.app/" target="_blank">¡Quiero un mercadito!</a>
+            <a  id="small-font"   class="navbar-brand text-light d-flex small-font" href="https://mercadito-appp.netlify.app/" target="_blank">¡Quiero un mercadito!</a>
         </div>
     </nav>
 
@@ -45,59 +45,71 @@
             <div class="form-container row">
                   
                     <div class="imagen">
-                        <img src="/img/piedritas sanitarias cat way.jpg" width="400" height="auto" class="me-2">
+                      <a href="/FOOD-APP-main/src/catalogo/catalogo.html">
+                        <h5>icono</h5>
+
+                      </a>
+                        <img src="/img/piedritas sanitarias cat way.jpg" width="300" height="auto" class="me-2">
                     </div>
 
-                          <div class="container p-4">
+                          <div class="container pt-4" id="container-opciones">
                             <!-- Product Options Section -->
-                            <div class="product-options">
-                              <h7 class="texto-selecciona">Selecciona las opciones que quieras</h7>
-                              <div class="option mt-2">
-                                <label>
-                                  <input type="checkbox"> Opción 1
-                                </label>
-                                <div class="quantity-control">
-                                  <button class="decrease">-</button>
-                                  <input type="number" class="quantity" value="0" min="0">
-                                  <button class="increase">+</button>
+                              <div class="product-options">
+                                <h7 class="texto-selecciona">Selecciona las opciones que quieras</h7>
+                                <div class="option mt-2">
+                                  <label>
+                                    <input type="checkbox"> Opción 1
+                                  </label>
+                                  <div class="quantity-control">
+                                    <button class="decrease">-</button>
+                                    <input type="number" class="quantity" value="0" min="0">
+                                    <button class="increase">+</button>
+                                  </div>
                                 </div>
-                              </div>
-                          
-                              <div class="option">
-                                <label>
-                                  <input type="checkbox"> Opción 2
-                                </label>
-                                <div class="quantity-control">
-                                  <button class="decrease">-</button>
-                                  <input type="number" class="quantity" value="0" min="0">
-                                  <button class="increase">+</button>
+                            
+                                <div class="option">
+                                  <label>
+                                    <input type="checkbox"> Opción 2
+                                  </label>
+                                  <div class="quantity-control">
+                                    <button class="decrease">-</button>
+                                    <input type="number" class="quantity" value="0" min="0">
+                                    <button class="increase">+</button>
+                                  </div>
                                 </div>
-                              </div>
-                          
-                              <div class="option">
-                                <label>
-                                  <input type="checkbox"> Opción 3
-                                </label>
-                                <div class="quantity-control">
-                                  <button class="decrease">-</button>
-                                  <input type="number" class="quantity" value="0" min="0">
-                                  <button class="increase">+</button>
+                            
+                                <div class="option">
+                                  <label>
+                                    <input type="checkbox"> Opción 3
+                                  </label>
+                                  <div class="quantity-control">
+                                    <button class="decrease">-</button>
+                                    <input type="number" class="quantity" value="0" min="0">
+                                    <button class="increase">+</button>
+                                  </div>
                                 </div>
+                                <a href="/FOOD-APP-main/src/catalogo/catalogo.html" class="text-decoration-none text-black">
+                                  <div class="nav-buttons">
+                                      <button class="btn view-order" onclick="setAgregarClicked()">Agregar</button>
+                                  </div>  
+                              </a>
+                              
                               </div>
-                            </div>
-                          
-                            <!-- Navigation Buttons -->
+
                             
                           </div>   
                    
             </div> 
-                      
+                   
     </div>
-
-    <script src="/funcionalidades.js"></script>
-    <div class="nav-buttons p-3">
-      <button class="btn view-order">Ver Pedido</button>
-      <button class="btn next-screen">Finalizar</button>
-    </div> 
+  
+  
+  <script>
+  // Esta función guarda un valor en localStorage cuando se hace clic en "Agregar"
+  function setAgregarClicked() {
+      localStorage.setItem('agregarClicked', 'true'); // Guardamos la acción
+  }
+  </script>
+  
 </body>
 </html>

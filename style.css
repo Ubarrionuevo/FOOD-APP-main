@@ -87,7 +87,7 @@ button {
     align-items: center;
 }
 .card-body img {
-    max-width: 00%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -337,9 +337,8 @@ body {
 }
 
 
-
-.small-font {
-    font-size: 1.2rem; /* Tamaño de fuente normal */
+#small-font {
+    font-size: 0.90rem; /* Tamaño de fuente normal */
 }
 
 /*--------------------DISEÑO MOBILE-------------------*/
@@ -673,16 +672,14 @@ body {
 /*---------------------------------------------------*/
 
 
-.navbar {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #dc3545; /* Color de fondo del navbar */
-    padding: 1rem; /* Espacio interno */
+
+#small-font {
+    font-size: 0.90rem;
 }
-.navbar-brand {
-    color: #fff; /* Color de texto del navbar */
-    font-weight: bold;
-    white-space: nowrap;
+
+#btn-descuento{
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 0 ;
 }

@@ -14,6 +14,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px;
         }
         .navbar-brand {
             white-space: nowrap;
@@ -21,6 +22,32 @@
         .small-font {
             font-size: 0.90rem;
         }
+
+        .search-container {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .catalog-container {
+            max-height: calc(100vh - 70px); /* Ajusta 70px según la altura de la barra de búsqueda */
+            overflow-y: auto;
+            padding-top: 10px;
+        }
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .product-item {
+            margin-bottom: 20px;
+        }
+        
+
+
+
+
      
     </style>
 </head>
@@ -48,7 +75,7 @@
         <div class="form-container row">
             <form class="formulario">
                 <!-- Contenedor de productos con scroll -->
-                <div class="product-list item-list-grid">
+                <div class="product-list item-list-grid" id="formulario-catalogo">
                     <!-- PERROS -->
                     <div class="product-item">
                         <span>Estampa(4)</span>

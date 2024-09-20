@@ -81,8 +81,7 @@ font-style: normal;
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container-fluid">
-            <a class="navbar-brand text-light d-flex" href="/index.html">Mercadito.app</a>
-            <a class="navbar-brand text-light d-flex small-font" href="https://mercadito-appp.netlify.app/" target="_blank">¡Quiero un mercadito!</a>
+            <img src="/img/Mercadito.png" class=""  style="margin-left: 110px;"  width="55px" alt="">
         </div>
     </nav>
    
@@ -98,12 +97,14 @@ font-style: normal;
                 <div class="form-section mb-4">
                     <h4 class="mb-3">Método de Pago</h4>
                     <div class="form-check">
-                        <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="saveSelection('paymentMethod', this.value)">
-                        <label for="paymentCash" class="form-check-label">Efectivo / Transferencia  </label> <span class="ml-4 con-stock-descuento"><strong>23% Descuento</strong></span>
+                        <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="applyDiscount(this.value)">
+                        <label for="paymentCash" class="form-check-label">Efectivo / Transferencia</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="paymentCard" name="paymentMethod" value="tarjeta" class="form-check-input" onclick="saveSelection('paymentMethod', this.value)">
+                        <input type="radio" id="paymentCard" name="paymentMethod" value="tarjeta" class="form-check-input" onclick="applyDiscount(this.value)">
                         <label for="paymentCard" class="form-check-label">Mercado Pago</label>
+                        <span class="ml-4 con-stock-descuento"><strong>+ 23%</strong></span>
+
                     </div>
                 </div>
 
@@ -111,11 +112,11 @@ font-style: normal;
                 <div class="form-section mb-4">
                     <h4 class="mb-3">Método de Entrega</h4>
                     <div class="form-check">
-                        <input type="radio" id="delivery" name="deliveryMethod" value="delivery" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
-                        <label for="delivery" class="form-check-label">Delivery <span class="sin-stock"><strong> + Costo de envio</strong></span></label>
+                        <input type="radio" id="delivery" name="deliveryMethod" value="Delivery" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
+                        <label for="delivery" class="form-check-label">Delivery <span class="sin-stock"><strong>  + Costo de envio</strong></span></label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="pickup" name="deliveryMethod" value="pickup" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
+                        <input type="radio" id="pickup" name="localMethod" value="Entrega por local" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
                         <label for="pickup" class="form-check-label">Retira por Local</label>
                     </div>
                 </div>
@@ -136,25 +137,83 @@ font-style: normal;
         <div class="boton-final">
             <h6 style=""><strong>Total a Pagar:</strong></h6> 
 
-            <h3 style="text-align: right;"><span id="total-price-display"><strong>0</strong></span></h5>
+            <h3 style="text-align: right;"><span id="total-price-display"><strong>0</strong></span></h3>
 
         </div>
-    <button class="btn btn-danger btn-full-width p-3"  style="margin-bottom: 0; width: 100%;"  onclick="redirectToWhatsApp(); return false;">Enviar Pedido</button>
+    <button class="btn btn-danger btn-full-width p-3"  id="send-wsp-button"  style="margin-bottom: 0; width: 100%;"  onclick="sendWhatsAppMessage(); return false;">Enviar Pedido</button>
     
     
-
     <script>
-   window.onload = function() {
-    const totalPrice = localStorage.getItem('totalPrice');
-    const totalPriceDisplay = document.getElementById('total-price-display');
+        let productDetails = ''; // Variable global para detalles de productos
     
-    if (totalPriceDisplay) {
-        totalPriceDisplay.textContent = totalPrice ? `$${totalPrice}` : '0';
-    } else {
-        console.error('Elemento total-price-display no encontrado.');
-    }
-};
+        window.onload = function() {
+            const totalPrice = localStorage.getItem('totalPrice');
+            const totalPriceDisplay = document.getElementById('total-price-display');
+    
+            if (totalPriceDisplay) {
+                totalPriceDisplay.textContent = totalPrice ? `$${totalPrice}` : '0';
+            } else {
+                console.error('Elemento total-price-display no encontrado.');
+            }
+        };
+    
+        function applyDiscount(paymentMethod) {
+            const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+            const totalPriceDisplay = document.getElementById('total-price-display');
+            localStorage.setItem('selectedPaymentMethod', paymentMethod);
+    
+            let finalPrice = totalPrice;
+    
+            if (paymentMethod === 'efectivo') {
+                finalPrice *= 0.77; // Aplicar el descuento del 23%
+            } else if (paymentMethod === 'tarjeta') {
+                finalPrice *= 1.23; // Aplicar incremento del 23%
+            }
+    
+            totalPriceDisplay.textContent = `$${finalPrice.toFixed(2)}`;
+            return finalPrice; // Devuelve el precio final
+        }
+    
+        function gatherProductDetails() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            productDetails = ''; // Reiniciar los detalles de productos
+    
+            checkboxes.forEach(checkbox => {
+                const productName = checkbox.dataset.productName; // Asegúrate de que esto esté definido en tu HTML
+                const productPrice = checkbox.dataset.productPrice; // Asegúrate de que esto esté definido en tu HTML
+                const quantity = checkbox.dataset.quantity; // Asegúrate de que esto esté definido en tu HTML
+    
+                productDetails += `${productName}, $${productPrice}, Cantidad: ${quantity}\n`;
+            });
+        }
+    
+        function sendWhatsAppMessage() {
+    const paymentMethod = localStorage.getItem('selectedPaymentMethod');
+    const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+    const finalPrice = applyDiscount(paymentMethod).toFixed(2);
 
+    // Obtén productDetails desde localStorage
+    const productDetails = localStorage.getItem('productDetails');
+    const delivery = localStorage.getItem('deliveryMethod')
+    const local = localStorage.getItem('localMethod')
+
+    // Obtén la información adicional
+    const additionalInfo = document.getElementById('additionalInfo').value; // Captura la info adicional
+    const methodOfDelivery = delivery? 'Delivery' : local ? 'Retira por Local' : 'No seleccionado';
+    const message = `
+        Detalles de la compra:
+        ${productDetails}
+    Método de entrega: ${methodOfDelivery}
+        Método de pago: ${paymentMethod}
+        Información adicional: ${additionalInfo}
+        Total a pagar: $${finalPrice}
+    `.trim();
+
+    const phoneNumber = '5493834035119'; // Cambia esto por el número al que enviarás el mensaje
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank'); // Abre el WhatsApp en una nueva pestaña
+}
+        document.getElementById('send-wsp-button').addEventListener('click', sendWhatsAppMessage);
     </script>
     <script src="/funcionalidades.js"></script>
 </body>

@@ -55,8 +55,8 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container-fluid">
-            <a class="navbar-brand text-light d-flex" href="/index.html">Mercadito.app</a>
-            <a class="navbar-brand text-light d-flex small-font" href="https://mercadito-appp.netlify.app/" target="_blank">¡Quiero un mercadito!</a>
+          <img src="/img/Mercadito.png" class=""  style="margin-left: 110px;"  width="55px" alt="">
+            <!-- <a class="navbar-brand text-light d-flex small-font" href="https://mercadito-appp.netlify.app/" target="_blank">¡Quiero un mercadito!</a> -->
         </div>
     </nav>
 
@@ -82,7 +82,7 @@
                         <li class="list-group-item mb-4">
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/estampa.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERROS ADULTOS 
+                                <label id="perros" class="form-check-label">PERROS ADULTOS 
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERROS ADULTOS', 500)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERROS ADULTOS', 500)">-</button>
                                 </label>
@@ -188,6 +188,7 @@
 
       document.addEventListener("DOMContentLoaded", function() {
     let cart = [];
+    let productDetails = '';
 
     function addProduct(name, price) {
         const product = cart.find(item => item.name === name);
@@ -218,13 +219,22 @@
         updateTotalPrice();
     }
 
-    function updateTotalPrice() {
-        const totalPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
-        console.log('Total Price:', totalPrice); // Para debugging
-        document.getElementById('total-price').textContent = totalPrice;
-        return totalPrice;
-    }
+   
 
+    function updateTotalPrice() {
+    productDetails = ''; // Reinicia la variable para evitar duplicados
+
+    const totalPrice = cart.reduce((total, product) => {
+        // Agrega la cantidad y el precio al productDetails
+        productDetails += `${product.name}: $${product.price.toFixed(2)} x ${product.quantity} unidades\n`;
+        return total + (product.price * product.quantity);
+    }, 0);
+
+    console.log('Total Price:', totalPrice, productDetails); // Para debugging
+    document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+    localStorage.setItem('totalPrice', totalPrice);
+    return totalPrice;
+}
     function openModal() {
         const carritoDetalles = document.getElementById('carrito-detalles');
         carritoDetalles.innerHTML = cart.length > 0
@@ -239,11 +249,11 @@
     }
 
     function finalizarCompra() {
-        const totalPrice = updateTotalPrice();
-        localStorage.setItem('totalPrice', totalPrice);
-        window.location.href = "/FOOD-APP-main/src/opciones-pago/pagos.html";
-    }
-
+    const totalPrice = updateTotalPrice();
+    localStorage.setItem('totalPrice', totalPrice);
+    localStorage.setItem('productDetails', productDetails.trim()); // Guarda el productDetails
+    window.location.href = "/FOOD-APP-main/src/opciones-pago/pagos.html";
+}
     // Exponer funciones globalmente para que los botones puedan llamarlas
     window.addProduct = addProduct;
     window.removeProduct = removeProduct;

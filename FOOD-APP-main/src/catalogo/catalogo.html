@@ -67,7 +67,7 @@
     
         </a>
         <input type="text" class="search-input" id="buscador" placeholder="Buscar...">
-        <button class="search-btn m-2">Buscar</button>
+        <button class="search-btn m-2" onclick="filterProducts()">Buscar</button>
     </div>
 
     <!-- Catálogo de productos -->
@@ -75,24 +75,26 @@
         <div class="form-container row">
             <form class="formulario">
                 <!-- Contenedor de productos con scroll -->
-                <div class="product-list item-list-grid" id="formulario-catalogo">
+                <div class="product-list item-list-grid item-list" id="formulario-catalogo">
                     <!-- PERROS -->
                     <div class="product-item">
                         <span>Estampa(4)</span>
                         <li class="list-group-item mb-4">
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/estampa.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label id="perros" class="form-check-label">PERROS ADULTOS 
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERROS ADULTOS', 500)">+</button>
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERROS ADULTOS', 500)">-</button>
+                                <label id="perros" class="form-check-label product-title ">PERROS ADULTOS 
+                                    <h5>$16500</h5>
+                                    <button type="button" class="btn btn-danger ml-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERROS ADULTOS', 500)">+</button>
+                                    <button type="button" class="btn btn-danger ml-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERROS ADULTOS', 500)">-</button>
                                 </label>
                             </div>
                             
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/estampa raza pequeña.jpg" width="100" height="auto" class="me-2">
-                                <label class="form-check-label">RAZA PEQUEÑA
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                <label class="form-check-label product-title">RAZA PEQUEÑA
+                                    <h5>$16500</h5>
+                                    <button type="button" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                    <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
                                 </label>
                             </div>
                             <hr>
@@ -105,9 +107,10 @@
                         <li class="list-group-item mb-4">
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/pro-plan-perro.jpg" width="80" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">MIX PERRO
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('MIX PERRO', 700)">+</button>
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('MIX PERRO', 700)">-</button>
+                                <label class="form-check-label product-title">MIX PERRO
+                                    <h5>$16500</h5>
+                                    <button type="button" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('MIX PERRO', 700)">+</button>
+                                    <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('MIX PERRO', 700)">-</button>
                                 </label>
                             </div>
                           
@@ -120,14 +123,16 @@
                         <li class="list-group-item mb-4 mt-2">
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/gran campeon 21 k.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERRO ADULTOS
+                                <label class="form-check-label product-title">PERRO ADULTOS
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
                             </div>  
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/gran campeon cachorro.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">CACHORRO
+                                <label class="form-check-label item product-title">CACHORRO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('CACHORRO', 900)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('CACHORRO', 900)">-</button>
                                 </label>
@@ -141,14 +146,16 @@
                         <li class="list-group-item mb-4 mt-2">
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/odwalla .jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">CACHORRO
+                                <label class="form-check-label  item product-title">CACHORRO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
                             </div>  
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/odwalla perro adulto.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERRO ADULTO
+                                <label class="form-check-label item product-title ">PERRO ADULTO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('CACHORRO', 900)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('CACHORRO', 900)">-</button>
                                 </label>
@@ -162,14 +169,16 @@
                         <li class="list-group-item mb-4 mt-2">
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/premium vital carne cordero.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">CARNE CORDERO
+                                <label class="form-check-label item  product-title">CARNE CORDERO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
                             </div>  
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/premium vital raza pequeña.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">RAZA PEQUEÑA
+                                <label class="form-check-label item product-title">RAZA PEQUEÑA
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('CACHORRO', 900)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('CACHORRO', 900)">-</button>
                                 </label>
@@ -183,21 +192,24 @@
                         <li class="list-group-item mb-4 mt-2">
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/dog selection perro adulto.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERRO ADULTO
+                                <label class="form-check-label item product-title">PERRO ADULTO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
                             </div>  
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/dog selection cachorro.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">CACHORRO
+                                <label class="form-check-label  product-title">CACHORRO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('CACHORRO', 900)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('CACHORRO', 900)">-</button>
                                 </label>
                             </div>
                             <div class="d-flex align-items-center mt-1 producto">
                                 <img src="/img/doc selection pero adulto.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERRO ADULTO
+                                <label class="form-check-label  product-title" >PERRO ADULTO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('CACHORRO', 900)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('CACHORRO', 900)">-</button>
                                 </label>
@@ -211,7 +223,8 @@
                         <li class="list-group-item mb-4 mt-2">
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/pacha perro adulto.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERRO ADULTO
+                                <label class="form-check-label product-title">PERRO ADULTO
+                                    <h5>$16500</h5>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
@@ -239,14 +252,14 @@
                         <li class="list-group-item mb-4 mt-2">
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/nutribon cachorro.jpg" width="50" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERRO CACHORRO
+                                <label class="form-check-label product-title">PERRO CACHORRO
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
                             </div>
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/nutribon perro adulto.jpg" width="50"  height="100%" class="me-2" alt="">
-                                <label class="form-check-label">PERRO ADULTO
+                                <label class="form-check-label ">PERRO ADULTO
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
@@ -268,7 +281,7 @@
                         <li class="list-group-item mb-4 mt-2">
                             <div class="d-flex align-items-center mt-2 producto">
                                 <img src="/img/matute 10 , 12 .jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">MATUTE 10KG
+                                <label class="form-check-label" id="item">MATUTE 10KG
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
                                     <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
                                 </label>
@@ -326,7 +339,8 @@
                
                 <div class="modal-footer">
                     
-                   
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
                     <a onclick="finalizarCompra()">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Finalizar</button>
                     </a>
@@ -340,6 +354,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       
+
+/*BUSCADOR LOGICA*/
+
 
       document.addEventListener("DOMContentLoaded", function() {
     let cart = [];

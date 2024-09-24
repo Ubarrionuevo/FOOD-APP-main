@@ -92,9 +92,20 @@ font-style: normal;
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg>
 
             </a>
-            <form class="align-items-center mt-5">
-                <!-- Sección de Método de Pago -->
-                <div class="form-section mb-4">
+            <form class="align-items-center mt-3">
+
+                <div>
+                    <p>Nombre </p>
+                    <input  class="form-check-label" type="text"> 
+                </div>
+                <div> 
+                    <p>Apellido </p>
+                    <input class="form-check-label" type="text"> 
+                </div>
+
+                <div class="form-section ">
+                    
+
                     <h4 class="mb-3">Método de Pago</h4>
                     <div class="form-check">
                         <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="applyDiscount(this.value)">
@@ -165,7 +176,7 @@ font-style: normal;
             let finalPrice = totalPrice;
     
             if (paymentMethod === 'efectivo') {
-                finalPrice *= 0.77; // Aplicar el descuento del 23%
+                return finalPrice // Aplicar el descuento del 23%
             } else if (paymentMethod === 'tarjeta') {
                 finalPrice *= 1.23; // Aplicar incremento del 23%
             }

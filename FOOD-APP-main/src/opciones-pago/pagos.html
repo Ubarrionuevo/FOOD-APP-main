@@ -83,29 +83,29 @@ font-style: normal;
         <div class="container-fluid">
             <img src="/img/Mercadito.png" class=""  style="margin-left: 145px;"  width="55px" alt="">
         </div>
+         <a href="/FOOD-APP-main/src/catalogo/catalogo.html " class="" style="color: black;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg>
+
+        </a> 
     </nav>
    
     <div class="container d-flex justify-content-center align-items-center  p-3">
         
         <div class="form-container">
-            <a href="/FOOD-APP-main/src/catalogo/catalogo.html " class="" style="color: black;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg>
-
-            </a>
+           
             <form class="align-items-center mt-3">
-
-                <div>
-                    <p>Nombre </p>
-                    <input  class="form-check-label" type="text"> 
+                <!-- Sección de Método de Pago -->
+                <div class="form-section mb-4">
+                      <div class="form-group">
+                        <label for="firstName">Nombre</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Apellido</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Ingresa tu apellido">
+                    </div>
                 </div>
-                <div> 
-                    <p>Apellido </p>
-                    <input class="form-check-label" type="text"> 
-                </div>
-
-                <div class="form-section ">
-                    
-
+                <div class="form-section mb-4">
                     <h4 class="mb-3">Método de Pago</h4>
                     <div class="form-check">
                         <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="applyDiscount(this.value)">
@@ -134,8 +134,8 @@ font-style: normal;
 
                 <!-- Información Adicional -->
                 <div class="form-section mb-4">
-                    <h4 class="mb-3">Información Adicional</h4>
-                    <textarea class="form-control" rows="4" placeholder="Escribe aquí más detalles o instrucciones adicionales..." id="additionalInfo"></textarea>
+                    <h4 class="">Información Adicional</h4>
+                    <textarea class="form-control" rows="2" placeholder="Escribe aquí más detalles o instrucciones adicionales..." id="additionalInfo"></textarea>
                 </div>
 
              
@@ -176,7 +176,7 @@ font-style: normal;
             let finalPrice = totalPrice;
     
             if (paymentMethod === 'efectivo') {
-                return finalPrice // Aplicar el descuento del 23%
+                return finalPrice; // Aplicar el descuento del 23%
             } else if (paymentMethod === 'tarjeta') {
                 finalPrice *= 1.23; // Aplicar incremento del 23%
             }
@@ -207,14 +207,18 @@ font-style: normal;
     const productDetails = localStorage.getItem('productDetails');
     const delivery = localStorage.getItem('deliveryMethod')
     const local = localStorage.getItem('localMethod')
+    const nombre = localStorage.getItem('firstName')
+    const apellido = localStorage.getItem('lastName')
 
     // Obtén la información adicional
     const additionalInfo = document.getElementById('additionalInfo').value; // Captura la info adicional
     const methodOfDelivery = delivery? 'Delivery' : local ? 'Retira por Local' : 'No seleccionado';
     const message = `
         Detalles de la compra:
+        Nombre : ${nombre}
+        Apellido : ${apellido}
         ${productDetails}
-    Método de entrega: ${methodOfDelivery}
+        Método de entrega: ${methodOfDelivery}
         Método de pago: ${paymentMethod}
         Información adicional: ${additionalInfo}
         Total a pagar: $${finalPrice}

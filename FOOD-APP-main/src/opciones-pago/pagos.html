@@ -6,7 +6,6 @@
     <title>Pagos</title>
     <link rel="stylesheet" href="/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         .navbar {
@@ -18,12 +17,10 @@
         .navbar-brand {
             white-space: nowrap;
         }
-         /* Tamaño de fuente normal para la versión web */
-         .small-font {
+        .small-font {
             font-size: 1.1rem; /* Tamaño de fuente normal */
         }
-        /* Tamaño de fuente pequeño para la versión móvil */
-        @media (max-width: 767.98px) { /* Ajusta el breakpoint según sea necesario */
+        @media (max-width: 767.98px) {
             .small-font {
                 font-size: 0.90rem; /* Tamaño de fuente más pequeño para móviles */
             }
@@ -33,65 +30,18 @@
         }
     </style>
 </head>
-
-<title></title>
-<style>
-
-*{
-
-font-family: "Roboto", sans-serif;
-font-weight: 100;
-font-style: normal;
-
-}
-#enviar{
-
-font-family: "Roboto", sans-serif;
-font-weight: 100;
-font-style: normal;
-
-}
-label{
-
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  
-}
-
-title{
-font-family: "Roboto", sans-serif;
-font-weight: 100;
-font-style: normal;
-}
-.boton-final{
-    padding: 0 .5em;
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    font-weight: 600;
-    color: #21243d;
-    align-items: center;
-    cursor: pointer;
-
-
-}
-</style>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container-fluid">
-            <img src="/img/Mercadito.png" class=""  style="margin-left: 145px;"  width="55px" alt="">
+            <img src="/img/Mercadito.png" class="" style="margin-left: 145px;" width="55px" alt="">
         </div>
-         <a href="/FOOD-APP-main/src/catalogo/catalogo.html " class="" style="color: black;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg>
-
-        </a> 
+    
     </nav>
    
     <div class="container d-flex justify-content-center align-items-center p-3">
         <div class="form-container">
-            <form class="align-items-center mt-3" onsubmit="return validateForm()">
+            <form class="align-items-center mt-3" onsubmit="return validateForm(event)">
                 <!-- Sección de Método de Pago -->
                 <div class="form-section mb-4">
                     <div class="form-group">
@@ -124,7 +74,7 @@ font-style: normal;
                         <label for="delivery" class="form-check-label">Delivery <span class="sin-stock"><strong> + Costo de envio</strong></span></label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="pickup" name="localMethod" value="Entrega por local" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)" required>
+                        <input type="radio" id="pickup" name="deliveryMethod" value="Entrega por local" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)" required>
                         <label for="pickup" class="form-check-label">Retira por Local</label>
                     </div>
                 </div>
@@ -136,157 +86,104 @@ font-style: normal;
                 </div>
     
                 <!-- Botón "Enviar Pedido" -->
-                <button type="submit" class="btn btn-primary">Enviar Pedido</button>
-
-                <a href="/FOOD-APP-main/src/catalogo/catalogo.html ">
-                    <button  type="button" class="btn btn-primary">Volver Atras</button>
-
-                </a>
-
+           
+                <span><strong>Total:</strong></span>
+                <div id="total-price-display" style="float: right;"></div> <!-- Añadido para mostrar el precio total -->
             </form>
+            <button id="send-wsp-button" type="button" class="btn btn-danger" onclick="sendWhatsAppMessage()">Enviar Pedido</button>
+            <a href="/FOOD-APP-main/src/catalogo/catalogo.html">
+                <button id="" type="button" class="btn btn-danger" style="float: right;">Volver Atras</button> <!-- Añadido para el botón de WhatsApp -->
+
+            </a> <!-- Añadido para el botón de WhatsApp -->
+
         </div>
     </div>
     
     <script>
-        function validateForm() {
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
-            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
-    
-            if (!firstName || !lastName || !paymentMethod || !deliveryMethod) {
-                alert('Por favor, completa todos los campos obligatorios.');
-                return false; // Evitar el envío del formulario
-            }
-    
-            // Si todos los campos están completos, permitir el envío
-            return true;
-        }
-    </script>
-    
-        <!-- <div class="boton-final">
-            <h6 style=""><strong>Total a Pagar:</strong></h6> 
-
-            <h3 style="text-align: right;"><span id="total-price-display"><strong>0</strong></span></h3>
-
-        </div>
-        <button class="btn btn-danger btn-full-width p-3" id="send-wsp-button" style="margin-bottom: 0; width: 100%;" onclick="validateForm(); return false;">Enviar Pedido</button> -->
-    
-    
-    <script>
-        let productDetails = ''; // Variable global para detalles de productos
-    
         window.onload = function() {
-            const totalPrice = localStorage.getItem('totalPrice');
             const totalPriceDisplay = document.getElementById('total-price-display');
-    
             if (totalPriceDisplay) {
-                totalPriceDisplay.textContent = totalPrice ? `$${totalPrice}` : '0';
+                const totalPrice = localStorage.getItem('totalPrice') || '0';
+                totalPriceDisplay.textContent = `$${totalPrice}`;
             } else {
                 console.error('Elemento total-price-display no encontrado.');
             }
         };
-    
-        function validateForm() {
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
-        const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
 
-        if (!firstName || !lastName || !paymentMethod || !deliveryMethod) {
-            alert('Por favor, completa todos los campos obligatorios.');
-            return false; // Evitar el envío del formulario
+        function validateForm(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
+
+            if (!firstName || !lastName || !paymentMethod || !deliveryMethod) {
+                alert('Por favor, completa todos los campos obligatorios.');
+                return false; // Evitar el envío del formulario
+            }
+
+            sendWhatsAppMessage();
+            return true;
         }
-
-        // Si todos los campos están completos, permitir el envío
-        return true;
-    }
-
-
-        function validateForm() {
-    const firstName = document.getElementById('firstName').value.trim();
-    const lastName = document.getElementById('lastName').value.trim();
-    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
-    const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
-
-    if (!firstName || !lastName || !paymentMethod || !deliveryMethod || localMethod) {
-        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-        document.getElementById('errorMessage').textContent = 'Por favor, completa todos los campos obligatorios.';
-        errorModal.show();
-        return; // Salir de la función si hay errores
-    }
-
-    // Si todo está completo, llama a sendWhatsAppMessage
-    sendWhatsAppMessage();
-}
-
-// Reemplaza la llamada directa a sendWhatsAppMessage en el botón
-document.getElementById('send-wsp-button').addEventListener('click', validateForm);
-
 
         function applyDiscount(paymentMethod) {
             const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
             const totalPriceDisplay = document.getElementById('total-price-display');
             localStorage.setItem('selectedPaymentMethod', paymentMethod);
-    
+
             let finalPrice = totalPrice;
-    
-            if (paymentMethod === 'efectivo') {
-                return finalPrice; // Aplicar el descuento del 23%
-            } else if (paymentMethod === 'tarjeta') {
+
+            if (paymentMethod === 'tarjeta') {
                 finalPrice *= 1.23; // Aplicar incremento del 23%
             }
-    
-            totalPriceDisplay.textContent = `$${finalPrice.toFixed(2)}`;
-            return finalPrice; // Devuelve el precio final
+
+            if (totalPriceDisplay) {
+                totalPriceDisplay.textContent = `$${finalPrice.toFixed(2)}`;
+            } else {
+                console.error('Elemento total-price-display no encontrado.');
+            }
+
+            return finalPrice;
         }
-    
+
         function gatherProductDetails() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            productDetails = ''; // Reiniciar los detalles de productos
+            let productDetails = ''; // Reiniciar los detalles de productos
     
             checkboxes.forEach(checkbox => {
-                const productName = checkbox.dataset.productName; // Asegúrate de que esto esté definido en tu HTML
-                const productPrice = checkbox.dataset.productPrice; // Asegúrate de que esto esté definido en tu HTML
-                const quantity = checkbox.dataset.quantity; // Asegúrate de que esto esté definido en tu HTML
+                const productName = checkbox.dataset.productName;
+                const productPrice = checkbox.dataset.productPrice;
+                const quantity = checkbox.dataset.quantity;
     
                 productDetails += `${productName}, $${productPrice}, Cantidad: ${quantity}\n`;
             });
+
+            localStorage.setItem('productDetails', productDetails); // Guardar en localStorage
         }
-    
+
         function sendWhatsAppMessage() {
-    const paymentMethod = localStorage.getItem('selectedPaymentMethod');
-    const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
-    const finalPrice = applyDiscount(paymentMethod).toFixed(2);
+            const paymentMethod = localStorage.getItem('selectedPaymentMethod');
+            const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+            const finalPrice = applyDiscount(paymentMethod);
+            const productDetails = localStorage.getItem('productDetails');
 
-    // Obtén productDetails desde localStorage
-    const productDetails = localStorage.getItem('productDetails');
-    const delivery = localStorage.getItem('deliveryMethod')
-    const local = localStorage.getItem('localMethod')
-   
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const additionalInfo = document.getElementById('additionalInfo').value.trim();
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value.trim();
 
-    // Obtén la información adicional
-    const additionalInfo = document.getElementById('additionalInfo').value; // Captura la info adicional
-    const nombre = document.getElementById('firstName').value
-    const apellido = document.getElementById('lastName').value
-    const methodOfDelivery = delivery? 'Delivery' : local ? 'Retira por Local' : 'No seleccionado';
-    const message = `
-        Detalles de la compra:
-        Nombre : ${nombre}
-        Apellido : ${apellido}
-        ${productDetails}
-        Método de entrega: ${methodOfDelivery}
-        Método de pago: ${paymentMethod}
-        Información adicional: ${additionalInfo}
-        Total a pagar: $${finalPrice}
-    `.trim();
+            const message = `Hola, soy ${firstName} ${lastName}.\n\nMétodo de Pago: ${paymentMethod}\nMétodo de Entrega: ${deliveryMethod}\n\nDetalles de Productos:\n${productDetails}\n\nPrecio Total: $${finalPrice.toFixed(2)}\n\nInformación Adicional:\n${additionalInfo}`;
 
-    const phoneNumber = '5493834035119'; // Cambia esto por el número al que enviarás el mensaje
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank'); // Abre el WhatsApp en una nueva pestaña
-}
-        document.getElementById('send-wsp-button').addEventListener('click', sendWhatsAppMessage);
+            const encodedMessage = encodeURIComponent(message);
+            const phoneNumber = '+5493834035119'; // Número de teléfono a enviar el mensaje
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function saveSelection(key, value) {
+            localStorage.setItem(key, value);
+        }
     </script>
-    <script src="/funcionalidades.js"></script>
 </body>
 </html>

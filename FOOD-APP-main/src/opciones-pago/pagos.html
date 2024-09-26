@@ -89,69 +89,88 @@ font-style: normal;
         </a> 
     </nav>
    
-    <div class="container d-flex justify-content-center align-items-center  p-3">
-        
+    <div class="container d-flex justify-content-center align-items-center p-3">
         <div class="form-container">
-           
-            <form class="align-items-center mt-3">
+            <form class="align-items-center mt-3" onsubmit="return validateForm()">
                 <!-- Sección de Método de Pago -->
                 <div class="form-section mb-4">
-                      <div class="form-group">
+                    <div class="form-group">
                         <label for="firstName">Nombre</label>
-                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Ingresa tu nombre">
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Ingresa tu nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Apellido</label>
-                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Ingresa tu apellido">
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Ingresa tu apellido" required>
                     </div>
                 </div>
                 <div class="form-section mb-4">
                     <h4 class="mb-3">Método de Pago</h4>
                     <div class="form-check">
-                        <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="applyDiscount(this.value)">
+                        <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="applyDiscount(this.value)" required>
                         <label for="paymentCash" class="form-check-label">Efectivo / Transferencia</label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="paymentCard" name="paymentMethod" value="tarjeta" class="form-check-input" onclick="applyDiscount(this.value)">
+                        <input type="radio" id="paymentCard" name="paymentMethod" value="tarjeta" class="form-check-input" onclick="applyDiscount(this.value)" required>
                         <label for="paymentCard" class="form-check-label">Mercado Pago</label>
                         <span class="ml-4 con-stock-descuento"><strong>+ 23%</strong></span>
-
                     </div>
                 </div>
-
+    
                 <!-- Sección de Método de Entrega -->
                 <div class="form-section mb-4">
                     <h4 class="mb-3">Método de Entrega</h4>
                     <div class="form-check">
-                        <input type="radio" id="delivery" name="deliveryMethod" value="Delivery" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
-                        <label for="delivery" class="form-check-label">Delivery <span class="sin-stock"><strong>  + Costo de envio</strong></span></label>
+                        <input type="radio" id="delivery" name="deliveryMethod" value="Delivery" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)" required>
+                        <label for="delivery" class="form-check-label">Delivery <span class="sin-stock"><strong> + Costo de envio</strong></span></label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="pickup" name="localMethod" value="Entrega por local" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)">
+                        <input type="radio" id="pickup" name="localMethod" value="Entrega por local" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)" required>
                         <label for="pickup" class="form-check-label">Retira por Local</label>
                     </div>
                 </div>
-
+    
                 <!-- Información Adicional -->
                 <div class="form-section mb-4">
                     <h4 class="">Información Adicional</h4>
                     <textarea class="form-control" rows="2" placeholder="Escribe aquí más detalles o instrucciones adicionales..." id="additionalInfo"></textarea>
                 </div>
+    
+                <!-- Botón "Enviar Pedido" -->
+                <button type="submit" class="btn btn-primary">Enviar Pedido</button>
 
-             
+                <a href="/FOOD-APP-main/src/catalogo/catalogo.html ">
+                    <button  type="button" class="btn btn-primary">Volver Atras</button>
+
+                </a>
+
             </form>
-            
         </div>
-        
     </div>
-   
-        <div class="boton-final">
+    
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
+    
+            if (!firstName || !lastName || !paymentMethod || !deliveryMethod) {
+                alert('Por favor, completa todos los campos obligatorios.');
+                return false; // Evitar el envío del formulario
+            }
+    
+            // Si todos los campos están completos, permitir el envío
+            return true;
+        }
+    </script>
+    
+        <!-- <div class="boton-final">
             <h6 style=""><strong>Total a Pagar:</strong></h6> 
 
             <h3 style="text-align: right;"><span id="total-price-display"><strong>0</strong></span></h3>
 
         </div>
-    <button class="btn btn-danger btn-full-width p-3"  id="send-wsp-button"  style="margin-bottom: 0; width: 100%;"  onclick="sendWhatsAppMessage(); return false;">Enviar Pedido</button>
+        <button class="btn btn-danger btn-full-width p-3" id="send-wsp-button" style="margin-bottom: 0; width: 100%;" onclick="validateForm(); return false;">Enviar Pedido</button> -->
     
     
     <script>
@@ -168,6 +187,43 @@ font-style: normal;
             }
         };
     
+        function validateForm() {
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+        const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
+
+        if (!firstName || !lastName || !paymentMethod || !deliveryMethod) {
+            alert('Por favor, completa todos los campos obligatorios.');
+            return false; // Evitar el envío del formulario
+        }
+
+        // Si todos los campos están completos, permitir el envío
+        return true;
+    }
+
+
+        function validateForm() {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+    const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
+
+    if (!firstName || !lastName || !paymentMethod || !deliveryMethod || localMethod) {
+        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        document.getElementById('errorMessage').textContent = 'Por favor, completa todos los campos obligatorios.';
+        errorModal.show();
+        return; // Salir de la función si hay errores
+    }
+
+    // Si todo está completo, llama a sendWhatsAppMessage
+    sendWhatsAppMessage();
+}
+
+// Reemplaza la llamada directa a sendWhatsAppMessage en el botón
+document.getElementById('send-wsp-button').addEventListener('click', validateForm);
+
+
         function applyDiscount(paymentMethod) {
             const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
             const totalPriceDisplay = document.getElementById('total-price-display');
@@ -207,11 +263,12 @@ font-style: normal;
     const productDetails = localStorage.getItem('productDetails');
     const delivery = localStorage.getItem('deliveryMethod')
     const local = localStorage.getItem('localMethod')
-    const nombre = localStorage.getItem('firstName')
-    const apellido = localStorage.getItem('lastName')
+   
 
     // Obtén la información adicional
     const additionalInfo = document.getElementById('additionalInfo').value; // Captura la info adicional
+    const nombre = document.getElementById('firstName').value
+    const apellido = document.getElementById('lastName').value
     const methodOfDelivery = delivery? 'Delivery' : local ? 'Retira por Local' : 'No seleccionado';
     const message = `
         Detalles de la compra:

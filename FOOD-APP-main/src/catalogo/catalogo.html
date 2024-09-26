@@ -342,9 +342,27 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
                     <a onclick="finalizarCompra()">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Finalizar</button>
+                        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Finalizar</button>
                     </a>
                     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    /*MODAL DEL ALERTA */ 
+    <div class="modal fade" id="emptyCartModal" tabindex="-1" aria-labelledby="emptyCartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emptyCartModalLabel">Carrito Vacío</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    No hay productos seleccionados.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -357,8 +375,7 @@
 
 /*BUSCADOR LOGICA*/
 
-
-      document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     let cart = [];
     let productDetails = '';
 
@@ -391,22 +408,21 @@
         updateTotalPrice();
     }
 
-   
-
     function updateTotalPrice() {
-    productDetails = ''; // Reinicia la variable para evitar duplicados
+        productDetails = ''; // Reinicia la variable para evitar duplicados
 
-    const totalPrice = cart.reduce((total, product) => {
-        // Agrega la cantidad y el precio al productDetails
-        productDetails += `${product.name}: $${product.price.toFixed(2)} x ${product.quantity} unidades\n`;
-        return total + (product.price * product.quantity);
-    }, 0);
+        const totalPrice = cart.reduce((total, product) => {
+            // Agrega la cantidad y el precio al productDetails
+            productDetails += `${product.name}: $${product.price.toFixed(2)} x ${product.quantity} unidades\n`;
+            return total + (product.price * product.quantity);
+        }, 0);
 
-    console.log('Total Price:', totalPrice, productDetails); // Para debugging
-    document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
-    localStorage.setItem('totalPrice', totalPrice);
-    return totalPrice;
-}
+        console.log('Total Price:', totalPrice, productDetails); // Para debugging
+        document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+        localStorage.setItem('totalPrice', totalPrice);
+        return totalPrice;
+    }
+
     function openModal() {
         const carritoDetalles = document.getElementById('carrito-detalles');
         carritoDetalles.innerHTML = cart.length > 0
@@ -421,11 +437,18 @@
     }
 
     function finalizarCompra() {
-    const totalPrice = updateTotalPrice();
-    localStorage.setItem('totalPrice', totalPrice);
-    localStorage.setItem('productDetails', productDetails.trim()); // Guarda el productDetails
-    window.location.href = "/FOOD-APP-main/src/opciones-pago/pagos.html";
-}
+        if (cart.length === 0) {
+            const emptyCartModal = new bootstrap.Modal(document.getElementById('emptyCartModal'));
+            emptyCartModal.show();
+            return; // No hace nada si no hay productos seleccionados
+        }
+
+        const totalPrice = updateTotalPrice();
+        localStorage.setItem('totalPrice', totalPrice);
+        localStorage.setItem('productDetails', productDetails.trim()); // Guarda el productDetails
+        window.location.href = "/FOOD-APP-main/src/opciones-pago/pagos.html";
+    }
+
     // Exponer funciones globalmente para que los botones puedan llamarlas
     window.addProduct = addProduct;
     window.removeProduct = removeProduct;

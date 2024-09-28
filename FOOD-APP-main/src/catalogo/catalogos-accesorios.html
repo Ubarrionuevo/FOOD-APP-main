@@ -77,62 +77,531 @@
             <form class="formulario">
                 <!-- Contenedor de productos con scroll -->
                 <div class="product-list item-list-grid" id="formulario-catalogo">
-                    <!-- PERROS -->
-                    <div class="product-item">
-                        <span>Estampa(4)</span>
-                        <li class="list-group-item mb-4">
-                           
-                            
-                            <div class="d-flex align-items-center mt-1 producto">
-                                <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
-                                <label class="form-check-label">LIMPCAT-LAVANDA X 4KG
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
-                                </label>
+                    <!-- LimpCat -->
+                                <div class="product-item">
+                                    <span>LimpCat(1)</span>
+                                    <li class="list-group-item mb-4">
+                                    
+                                        
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">LIMPCAT 4kg
+                                                <h5>$3900</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <!-- FreshCat -->
+                                <div class="product-item">
+                                    <span>Fresh Cat(1)</span>
+                                    <li class="list-group-item mb-4" style="margin-left: 15px;">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas.jpg" width="70" height="auto" class="me-2">
+                                            <label class="form-check-label" style="margin-left: 15px;">FRESH CAT 25kg
+                                                <h5>$15000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <!-- Cat Way -->
+                                <div class="product-item">
+                                    <span>Cat Way(1)</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">CAT WAY 4kg
+                                                <h5>$4300</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <!-- Arroz Saborizado -->
+                                <div class="product-item">
+                                    <span>Arroz Saborizado(1)</span>
+                                    <li class="list-group-item mb-2">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/arroz saborizado para perros.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">ARROZ SABORIZADO 15kg
+                                                <h5>$21000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <!-- Rascador -->
+                                <div class="product-item">
+                                    <span>Rascador(1)</span>
+                                    <li class="list-group-item mb-2">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/rascador con amaca.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">RASCADOR C/AMACA h-50cm / b-65x30
+                                                <h5>$37500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <!-- Venenos -->
+                                <div class="product-item">
+                                    <span>Venenos(4)</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/veneno para rata.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">VENENO PARA RATA PICNIC
+                                                <h5>$6700</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/veneno para hormiga.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">VENENO PARA HORMIGA 250grs
+                                                <h5>$2800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">CURA VICHERA 420ml
+                                                <h5>$2800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">YOUNG PULGUICIDA/ GARRAPATICIDA 400ml
+                                                <h5>$9800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Medicamentos(5)</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/simparica.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">SIMPARICA 1-5 kg
+                                                <h5>$15000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/simparica.jpg"  width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">SIMPARICA 5-10 kg
+                                                <h5>$17000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/simparica.jpg"  width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">SIMPARICA 10-20 kg
+                                                <h5>$22100</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/simparica.jpg"  width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">SIMPARICA 20-40 kg
+                                                <h5>$25900</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                         </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                                <img src="/img/simparica.jpg"  width="100" height="auto" class="me-2">
+                                                <label class="form-check-label">SIMPARICA 40-60 kg
+                                                    <h5>$26900</h5>
+                                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                                </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Colchones(6)</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/colchoneta antidesgarro.jpg" width="70" height="auto" class="me-2" style="margin-left: 7px;">
+                                            <label class="form-check-label" style="margin-left: 15px;">COLCHONES ANTIDESGARRO T1 -35X40
+                                                <h5>$9500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/colchoneta antidesgarro.jpg" width="70" height="auto" class="me-2"style="margin-left: 7px;">
+                                            <label class="form-check-label" style="margin-left: 15px;">COLCHONES ANTIDESGARRO T2 -40X50
+                                                <h5>$10800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/colchoneta antidesgarro.jpg" width="70" height="auto" class="me-2"style="margin-left: 7px;">
+                                            <label class="form-check-label" style="margin-left: 15px;">COLCHONES ANTIDESGARRO T3 -60X50
+                                                <h5>$12500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/colchoneta antidesgarro.jpg" width="70" height="auto" class="me-2"style="margin-left: 7px;">
+                                            <label class="form-check-label" style="margin-left: 15px;">COLCHONES ANTIDESGARRO T4 -75X60
+                                                <h5>$15300</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                            </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                        <img src="/img/colchoneta antidesgarro.jpg" width="70" height="auto" class="me-2"style="margin-left: 7px;" >
+                                        <label class="form-check-label" style="margin-left: 15px;">COLCHONES ANTIDESGARRO T5 -100X75
+                                            <h5>$20500</h5>
+                                            <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                            <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                        </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/colchoneta antidesgarro.jpg" width="70" height="auto" class="me-2"style="margin-left: 7px;">
+                                            <label class="form-check-label" style="margin-left: 15px;">COLCHONES ANTIDESGARRO T6 -100X100
+                                                <h5>$24900</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                            </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Pipetas Hectopar(6)</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">PIPETAS HECTOPAR PERRO 4-10kg
+                                                <h5>$2500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">PIPETAS HECTOPAR PERRO 10-25kg
+                                                <h5>$2500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">PIPETAS HECTOPAR PERRO 25-40kg
+                                                <h5>$2500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">PIPETAS HECTOPAR PERRO 40-60kg
+                                                <h5>$2500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                            </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                        <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                        <label class="form-check-label">PIPETAS HECTOPAR GATO 1-4 kg
+                                            <h5>$2500</h5>
+                                            <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                            <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                        </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">PIPETAS HECTOPAR GATO +4 kg
+                                                <h5>$2500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('LIMPCAT-LAVANDA X 4KG', 600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('LIMPCAT-LAVANDA X 4KG', 600)">-</button>
+                                            </label>
+                                            </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Collares de Nylon</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle1.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 1 nylon
+                                                <h5>$1000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 1 nylon', 1000)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 1 nylon', 1000)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle2.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 2 nylon
+                                                <h5>$1200</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 2 nylon', 1200)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 2 nylon', 1200)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle3.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 3 nylon
+                                                <h5>$1300</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 3 nylon', 1300)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 3 nylon', 1300)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle4.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 4 nylon
+                                                <h5>$1400</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 4 nylon', 1400)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 4 nylon', 1400)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle5.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 5 nylon
+                                                <h5>$1500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 5 nylon', 1500)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 5 nylon', 1500)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle6.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 6 nylon
+                                                <h5>$1600</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 6 nylon', 1600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 6 nylon', 1600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle7.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 7 nylon
+                                                <h5>$1900</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 7 nylon', 1900)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 7 nylon', 1900)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/collar-talle8.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Collares talle 8 nylon
+                                                <h5>$2000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Collares talle 8 nylon', 2000)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Collares talle 8 nylon', 2000)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Camperitas Impermeables</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/camperita-t1.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Camperitas Impermeables (T1)
+                                                <h5>$5600</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Camperitas Impermeables (T1)', 5600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Camperitas Impermeables (T1)', 5600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/camperita-t2.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Camperitas Impermeables (T2)
+                                                <h5>$6800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Camperitas Impermeables (T2)', 6800)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Camperitas Impermeables (T2)', 6800)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/camperita-t3.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Camperitas Impermeables (T3)
+                                                <h5>$7700</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Camperitas Impermeables (T3)', 7700)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Camperitas Impermeables (T3)', 7700)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/camperita-t5.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Camperitas Impermeables (T5)
+                                                <h5>$10200</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Camperitas Impermeables (T5)', 10200)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Camperitas Impermeables (T5)', 10200)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/camperita-t6.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Camperitas Impermeables (T6)
+                                                <h5>$12800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Camperitas Impermeables (T6)', 12800)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Camperitas Impermeables (T6)', 12800)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Chaleco "anda pa alla bobo"</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/chaleco-t2.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Chaleco "anda pa alla bobo" (T2)
+                                                <h5>$6700</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Chaleco anda pa alla bobo (T2)', 6700)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Chaleco anda pa alla bobo (T2)', 6700)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/chaleco-t3.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Chaleco "anda pa alla bobo" (T3)
+                                                <h5>$7200</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Chaleco anda pa alla bobo (T3)', 7200)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Chaleco anda pa alla bobo (T3)', 7200)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/chaleco-t4.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Chaleco "anda pa alla bobo" (T4)
+                                                <h5>$7800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Chaleco anda pa alla bobo (T4)', 7800)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Chaleco anda pa alla bobo (T4)', 7800)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Ropita de Messi (Selección Argentina)</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/ropita-messi-s.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Ropita de Messi (Selección Argentina - S)
+                                                <h5>$4500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Ropita de Messi (Selección Argentina - S)', 4500)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Ropita de Messi (Selección Argentina - S)', 4500)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/ropita-messi-m.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Ropita de Messi (Selección Argentina - M)
+                                                <h5>$5000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Ropita de Messi (Selección Argentina - M)', 5000)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Ropita de Messi (Selección Argentina - M)', 5000)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/ropita-messi-l.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Ropita de Messi (Selección Argentina - L)
+                                                <h5>$5600</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Ropita de Messi (Selección Argentina - L)', 5600)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Ropita de Messi (Selección Argentina - L)', 5600)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/ropita-messi-xl.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Ropita de Messi (Selección Argentina - XL)
+                                                <h5>$6000</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Ropita de Messi (Selección Argentina - XL)', 6000)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Ropita de Messi (Selección Argentina - XL)', 6000)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Mochilas Transportadoras</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/mochila-transportadora-s.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Mochilas Transportadoras (S)
+                                                <h5>$16700</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Mochilas Transportadoras (S)', 16700)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Mochilas Transportadoras (S)', 16700)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/mochila-transportadora-m.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Mochilas Transportadoras (M)
+                                                <h5>$17500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Mochilas Transportadoras (M)', 17500)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Mochilas Transportadoras (M)', 17500)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/mochila-transportadora-l.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">Mochilas Transportadoras (L)
+                                                <h5>$18300</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('Mochilas Transportadoras (L)', 18300)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('Mochilas Transportadoras (L)', 18300)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>ECTHOL</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/ecthol-70ml.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">ECTHOL 70 ML
+                                                <h5>$5300</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('ECTHOL 70 ML', 5300)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('ECTHOL 70 ML', 5300)">-</button>
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/ecthol-120ml.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">ECTHOL 120 ML
+                                                <h5>$7800</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('ECTHOL 120 ML', 7800)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('ECTHOL 120 ML', 7800)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item">
+                                    <span>Ivertor(1)</span>
+                                    <li class="list-group-item mb-4">
+                                        <div class="d-flex align-items-center mt-1 producto">
+                                            <img src="/img/ecthol-70ml.jpg" width="100" height="auto" class="me-2">
+                                            <label class="form-check-label">C Comprimidos 20kg
+                                                <h5>$500</h5>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('ECTHOL 70 ML', 5300)">+</button>
+                                                <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('ECTHOL 70 ML', 5300)">-</button>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="product-item"></div>
+                                <span>Cepillo(1)</span>
+                                <li class="list-group-item mb-4">
+                                    <div class="d-flex align-items-center mt-1 producto">
+                                        <img src="/img/ecthol-70ml.jpg" width="100" height="auto" class="me-2">
+                                        <label class="form-check-label">Cepillo con dispenser
+                                            <h5>$5300</h5>
+                                            <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('ECTHOL 70 ML', 5300)">+</button>
+                                            <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('ECTHOL 70 ML', 5300)">-</button>
+                                        </label>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-    
-                    <!-- GATOS -->
-                    <div class="product-item">
-                        <span></span>
-                        <li class="list-group-item mb-4">
-                           
-                          
-                        </li>
-                    </div>
-                    
-                    <div class="product-item">
-                        <span id="text-pequeño">Gran Campeon(2)</span>
-                        <li class="list-group-item mb-4 ">
-                            <div class="d-flex align-items-center  producto">
-                                <img src="/img/piedritas.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('PERRO ADULTOS', 800)">+</button>
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('PERRO ADULTOS', 800)">-</button>
-                                </label>
-                            </div>  
-                            <div class="d-flex align-items-center mt-1 producto">
-                                <img src="/img/piedritas sanitarias cat way.jpg" width="100" height="100%" class="me-2" alt="">
-                                <label class="form-check-label">
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('CACHORRO', 900)">+</button>
-                                    <button type="button" class="btn btn-danger mt-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('CACHORRO', 900)">-</button>
-                                </label>
-                            </div>
-                            
-                        </li>
-                    </div>
+                                                             
                 </div>
     
                 <!-- Botón fijo para carrito -->
-                <div class="fixed-bottom bg-light p-3" id="carrito-info">
-                    <button type="button" class="btn btn-primary w-100" id="boton-carrito" onclick="openModal()">Carrito (0)</button>
-                </div>
+                    <div class="fixed-bottom bg-light p-3" id="carrito-info">
+                        <button type="button" class="btn btn-primary w-100" id="boton-carrito" onclick="openModal()">Carrito (0)</button>
+                    </div>
     
-                <!-- Banner del precio total -->
-                <div class="total-price-banner">
-                    <h5>Total: $<span id="total-price">0</span></h5>
-                </div>
             </form>
         </div>
     </div>

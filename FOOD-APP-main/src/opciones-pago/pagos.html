@@ -41,7 +41,7 @@
    
     <div class="container d-flex justify-content-center align-items-center p-3">
         <div class="form-container">
-            <form class="align-items-center mt-3" onsubmit="return validateForm(event)">
+            <form class="align-items-center mt-3" onsubmit="validateForm(event)">
                 <!-- Sección de Método de Pago -->
                 <div class="form-section mb-4">
                     <div class="form-group">
@@ -58,6 +58,7 @@
                     <div class="form-check">
                         <input type="radio" id="paymentCash" name="paymentMethod" value="efectivo" class="form-check-input" onclick="applyDiscount(this.value)" required>
                         <label for="paymentCash" class="form-check-label">Efectivo / Transferencia</label>
+                        <p id="cbuAlias" class="form-check-label" style="display: none; margin-bottom: 1px;"><strong>CBU:     ALIAS:      -    Titular : Nicolas Perez</strong></p>
                     </div>
                     <div class="form-check">
                         <input type="radio" id="paymentCard" name="paymentMethod" value="tarjeta" class="form-check-input" onclick="applyDiscount(this.value)" required>
@@ -65,24 +66,25 @@
                         <span class="ml-4 con-stock-descuento"><strong>+ 23%</strong></span>
                     </div>
                 </div>
+                
     
                 <!-- Sección de Método de Entrega -->
                 <div class="form-section mb-4">
                     <h4 class="mb-3">Método de Entrega</h4>
                     <div class="form-check">
-                        <input type="radio" id="delivery" name="deliveryMethod" value="Delivery" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)" required>
-                        <label for="delivery" class="form-check-label">Delivery <span class="sin-stock"><strong> + Costo de envio</strong></span></label>
+                        <input type="radio" id="deliveryMethod1" name="deliveryMethod" value="method1"  required>
+                        <label for="deliveryMethod1" class="form-check-label">Delivery <span class="sin-stock"><strong> + Costo de envio</strong></span></label>
                     </div>
                     <div class="form-check">
-                        <input type="radio" id="pickup" name="deliveryMethod" value="Entrega por local" class="form-check-input" onclick="saveSelection('deliveryMethod', this.value)" required>
-                        <label for="pickup" class="form-check-label">Retira por Local</label>
+                        <input type="radio" id="deliveryMethod2" name="deliveryMethod" value="method2"  required>
+                        <label for="deliveryMethod2" class="form-check-label">Retira por Local</label>
                     </div>
                 </div>
-    
+
                 <!-- Información Adicional -->
-                <div class="form-section mb-4">
+                <div class="form-section mb-4" >
                     <h4 class="">Información Adicional</h4>
-                    <textarea class="form-control" rows="2" placeholder="Escribe aquí más detalles o instrucciones adicionales..." id="additionalInfo"></textarea>
+                    <textarea  id="additionalInfo"   class="form-control" rows="2" placeholder="Escribe aquí más detalles o instrucciones adicionales..."></textarea>
                 </div>
     
                 <!-- Botón "Enviar Pedido" -->
@@ -90,12 +92,21 @@
                 <span><strong>Total:</strong></span>
                 <div id="total-price-display" style="float: right;"></div> <!-- Añadido para mostrar el precio total -->
             </form>
-            <button id="send-wsp-button" type="button" class="btn btn-danger" onclick="sendWhatsAppMessage()">Enviar Pedido</button>
+            <button id="send-wsp-button" type="submit" class="btn btn-danger" onclick="sendWhatsAppMessage()">Enviar Pedido</button>
             <a href="/FOOD-APP-main/src/catalogo/catalogo.html">
                 <button id="" type="button" class="btn btn-danger" style="float: right;">Volver Atras</button> <!-- Añadido para el botón de WhatsApp -->
 
             </a> <!-- Añadido para el botón de WhatsApp -->
 
+        </div>
+
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Error</h2>
+                <p id="modalMessage">Por favor, completa todos los campos obligatorios.</p>
+                <button onclick="closeModal()">Cerrar</button>
+            </div>
         </div>
     </div>
     
@@ -111,40 +122,70 @@
         };
 
         function validateForm(event) {
-            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
-            const firstName = document.getElementById('firstName').value.trim();
-            const lastName = document.getElementById('lastName').value.trim();
-            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
-            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
+    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+    const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
 
-            if (!firstName || !lastName || !paymentMethod || !deliveryMethod) {
-                alert('Por favor, completa todos los campos obligatorios.');
-                return false; // Evitar el envío del formulario
-            }
+    // Validar campos obligatorios
+    if (!firstName || !lastName || !paymentMethod || !deliveryMethod) {
+        alert('Por favor, completa todos los campos obligatorios.');
 
-            sendWhatsAppMessage();
-            return true;
+        // Resaltar los campos vacíos (opcional)
+        if (!firstName) {
+            document.getElementById('firstName').style.borderColor = 'red';
         }
+        if (!lastName) {
+            document.getElementById('lastName').style.borderColor = 'red';
+        }
+        if (!paymentMethod) {
+            // Resaltar el grupo de métodos de pago (opcional)
+            document.querySelectorAll('input[name="paymentMethod"]').forEach(input => {
+                input.parentElement.style.color = 'red'; // Resaltar texto del método de pago
+            });
+        }
+        if (!deliveryMethod) {
+            // Resaltar el grupo de métodos de entrega (opcional)
+            document.querySelectorAll('input[name="deliveryMethod"]').forEach(input => {
+                input.parentElement.style.color = 'red'; // Resaltar texto del método de entrega
+            });
+        }
+
+        return false; // Evitar el envío del formulario
+    }
+
+    // Llamar a la función para enviar el mensaje si la validación es exitosa
+    sendWhatsAppMessage();
+    return true;
+}
+
 
         function applyDiscount(paymentMethod) {
-            const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
-            const totalPriceDisplay = document.getElementById('total-price-display');
-            localStorage.setItem('selectedPaymentMethod', paymentMethod);
+    const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+    const totalPriceDisplay = document.getElementById('total-price-display');
+    const cbuAlias = document.getElementById('cbuAlias'); // Selecciona el elemento CBU y Alias
+    localStorage.setItem('selectedPaymentMethod', paymentMethod);
 
-            let finalPrice = totalPrice;
+    let finalPrice = totalPrice;
 
-            if (paymentMethod === 'tarjeta') {
-                finalPrice *= 1.23; // Aplicar incremento del 23%
-            }
+    if (paymentMethod === 'tarjeta') {
+        finalPrice *= 1.23; // Aplicar incremento del 23%
+        cbuAlias.style.display = 'none'; // Oculta el CBU y Alias al seleccionar tarjeta
+    } else if (paymentMethod === 'efectivo') {
+        cbuAlias.style.display = 'block'; // Muestra el CBU y Alias al seleccionar efectivo
+    } else {
+        cbuAlias.style.display = 'none'; // Asegúrate de ocultar en caso de otro método
+    }
 
-            if (totalPriceDisplay) {
-                totalPriceDisplay.textContent = `$${finalPrice.toFixed(2)}`;
-            } else {
-                console.error('Elemento total-price-display no encontrado.');
-            }
+    if (totalPriceDisplay) {
+        totalPriceDisplay.textContent = `$${finalPrice.toFixed(2)}`;
+    } else {
+        console.error('Elemento total-price-display no encontrado.');
+    }
 
-            return finalPrice;
-        }
+    return finalPrice;
+}
 
         function gatherProductDetails() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -162,24 +203,56 @@
         }
 
         function sendWhatsAppMessage() {
-            const paymentMethod = localStorage.getItem('selectedPaymentMethod');
-            const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
-            const finalPrice = applyDiscount(paymentMethod);
-            const productDetails = localStorage.getItem('productDetails');
+    const paymentMethod = localStorage.getItem('selectedPaymentMethod');
+    const totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
+    const finalPrice = applyDiscount(paymentMethod);
+    const productDetails = localStorage.getItem('productDetails');
 
-            const firstName = document.getElementById('firstName').value.trim();
-            const lastName = document.getElementById('lastName').value.trim();
-            const additionalInfo = document.getElementById('additionalInfo').value.trim();
-            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value.trim();
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    
+    const additionalInfoElement = document.getElementById('additionalInfo');
+    const additionalInfo = additionalInfoElement ? additionalInfoElement.value.trim() : '';
 
-            const message = `Hola, soy ${firstName} ${lastName}.\n\nMétodo de Pago: ${paymentMethod}\nMétodo de Entrega: ${deliveryMethod}\n\nDetalles de Productos:\n${productDetails}\n\nPrecio Total: $${finalPrice.toFixed(2)}\n\nInformación Adicional:\n${additionalInfo}`;
+    const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
 
-            const encodedMessage = encodeURIComponent(message);
-            const phoneNumber = '+5493834035119'; // Número de teléfono a enviar el mensaje
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
+    const deliveryMethodValue = deliveryMethod ? deliveryMethod.value.trim() : '';
+
+    // Comprobar que los métodos de pago y entrega están disponibles
+    if (!paymentMethod || !deliveryMethodValue) {
+        showModal('Por favor, completa todos los campos obligatorios antes de enviar el mensaje.');
+        return; // Salir de la función si faltan datos
+    }
+
+    const message = `Hola, soy ${firstName} ${lastName}.\n\nMétodo de Pago: ${paymentMethod}\nMétodo de Entrega: ${deliveryMethodValue}\n\nDetalles de Productos:\n${productDetails}\n\nPrecio Total: $${finalPrice.toFixed(2)}\n\nInformación Adicional:\n${additionalInfo}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = '+5493834035119'; // Número de teléfono a enviar el mensaje
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+}
+
+function showModal(message) {
+    const modal = document.getElementById('errorModal');
+    document.getElementById('modalMessage').textContent = message;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modal = document.getElementById('errorModal');
+    modal.style.display = "none";
+}
+
+// Cerrar el modal si el usuario hace clic fuera de él
+window.onclick = function(event) {
+    const modal = document.getElementById('errorModal');
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+
 
         function saveSelection(key, value) {
             localStorage.setItem(key, value);

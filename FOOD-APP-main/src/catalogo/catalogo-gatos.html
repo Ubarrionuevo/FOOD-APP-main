@@ -208,6 +208,68 @@
       document.addEventListener("DOMContentLoaded", function() {
     let cart = [];
     let productDetails = '';
+    
+    let originalProducts = []; // Array para almacenar la lista original de productos
+
+// Cargar los productos originales
+function loadOriginalProducts() {
+    const productsContainer = document.getElementById('formulario-catalogo');
+    const productItems = productsContainer.getElementsByClassName('product-item');
+
+    // Guardar productos originales en el array
+    for (let i = 0; i < productItems.length; i++) {
+        originalProducts.push(productItems[i].cloneNode(true)); // Clonar cada producto para mantener el original
+    }
+}
+
+// Filtrar productos basado en el input de búsqueda
+function filterProducts() {
+    const searchInput = document.getElementById('buscador').value.trim().toLowerCase();
+    const productsContainer = document.getElementById('formulario-catalogo');
+
+    // Si el campo de búsqueda está vacío, restaurar todos los productos
+    if (searchInput === '') {
+        productsContainer.innerHTML = ''; // Limpiar el contenedor
+        originalProducts.forEach(item => productsContainer.appendChild(item.cloneNode(true))); // Mostrar productos originales
+        return; // Salir de la función
+    }
+
+    const matchedItems = []; // Array para almacenar los productos que coinciden
+    const unmatchedItems = []; // Array para almacenar los productos que no coinciden
+
+    for (let i = 0; i < originalProducts.length; i++) {
+        const productName = originalProducts[i].getElementsByTagName('label')[0].innerText.toLowerCase(); // Obtener el nombre del producto
+        if (productName.includes(searchInput)) {
+            matchedItems.push(originalProducts[i]); // Agregar a productos que coinciden
+        } else {
+            unmatchedItems.push(originalProducts[i]); // Agregar a productos que no coinciden
+        }
+    }
+
+    // Limpiar el contenedor de productos
+    productsContainer.innerHTML = '';
+
+    // Reorganizar productos: primero los que coinciden, luego los que no
+    matchedItems.forEach(item => productsContainer.appendChild(item.cloneNode(true)));
+    unmatchedItems.forEach(item => productsContainer.appendChild(item.cloneNode(true)));
+
+    // Mensaje si no se encuentran resultados
+    if (matchedItems.length === 0) {
+        const noResultsMessage = document.createElement('p');
+        noResultsMessage.textContent = 'No se encontraron resultados.';
+        productsContainer.appendChild(noResultsMessage);
+    }
+}
+
+// Cargar los productos originales al cargar la página
+window.onload = function() {
+    loadOriginalProducts();
+};
+
+// Manejar la búsqueda al presionar Enter
+document.getElementById('buscador').addEventListener('input', filterProducts);
+
+
 
     function addProduct(name, price) {
         const product = cart.find(item => item.name === name);

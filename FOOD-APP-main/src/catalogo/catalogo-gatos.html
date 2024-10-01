@@ -61,14 +61,19 @@
         </div>
     </nav>
 
-
-    <div class="search-container">
-        <a href="/index.html " class="text-decoration-none p-2" style="color: black;" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg>
-    
+    <div class="filter-container search-container">
+        <a href="/index.html" class="text-decoration-none p-2" style="color: black;">
+            <svg xmlns="http://www.w3.org/2000/svg"  style="margin-left: 20px"  width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg>
         </a>
-        <input type="text" class="search-input" id="buscador" placeholder="Buscar...">
-        <button class="search-btn m-2">Buscar</button>
+        <select id="brand-select" style="margin-left: 30px; border-radius: 20px; padding: 5px;" onchange="filterProducts()">
+            <option value="">Todas las marcas</option>
+            <option value="sabrositos">Sabrositos</option>
+            <option value="fishy">Fishy</option>
+        </select>
+        
+    </div>
+    <div id="product-list" class="product-list">
+        <!-- Aquí se mostrarán los productos filtrados -->
     </div>
 
     <!-- Catálogo de productos -->
@@ -206,6 +211,131 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+
+const productos = [
+    {
+        nombre: "SABROSITOS PESCADO 3kg",
+        precio: 7000,
+        imagen: "/img/sabrosito gato pesacdo.jpg",
+        categoria: 'sabrositos',
+        id: 1,
+    },
+    {
+        nombre: "SABROSITOS PESCADO 10kg",
+        precio: 21300,
+        imagen: "/img/sabrosito gato pesacdo.jpg",
+        categoria: 'sabrositos',
+
+        id:2,
+    },
+    {
+        nombre: "SABROSITOS PESCADO 20kg",
+        precio: 40200,
+        imagen: "/img/sabrosito gato pesacdo.jpg",
+        categoria: 'sabrositos',
+        id:3,
+    },
+    {
+        nombre: "SABROSITOS MIX 3kg",
+        precio: 40200,
+        imagen: "/img/sabrosito mix gato.jpg",
+        categoria: 'sabrositos',
+        id:4,
+    },
+    {
+        nombre: "SABROSITOS MIX 10kg",
+        precio: 19500,
+        imagen: "/img/sabrosito mix gato.jpg",
+        categoria: 'sabrositos',
+        id:5,
+    },
+    {
+        nombre: "SABROSITOS MIX 20kg",
+        precio: 37800,
+        imagen: "/img/sabrosito mix gato.jpg",
+        categoria: 'sabrositos',
+        id:6,
+    },
+    {
+        nombre: "FISHTY 15kg",
+        precio: 21000,
+        imagen: "/img/fyshi_nuevo-removebg-preview.png",
+        categoria:'fishy',
+        id:7
+    },
+];
+
+const select = document.getElementById('brand-select');
+    const marcas = [...new Set(productos.map(producto => producto.marca))];
+
+    marcas.forEach(marca => {
+        const option = document.createElement('option');
+        option.value = marca;
+        option.textContent = marca.charAt(0).toUpperCase() + marca.slice(1); // Capitaliza la primera letra
+        select.appendChild(option);
+    });
+
+    function filterProducts() {
+        const selectedMarca = select.value;
+        // Lógica para filtrar productos según la marca seleccionada
+        console.log(`Filtrando productos por la marca: ${selectedMarca}`);
+    }
+
+
+function filterProducts() {
+    const selectedBrand = document.getElementById('brand-select').value;
+    const productList = document.getElementById('product-list');
+
+    // Limpiar el contenido del producto
+    if (selectedBrand === '') {
+        // Si se selecciona "Todas las marcas", eliminar el div de productos
+        productList.innerHTML = ''; // Eliminar los productos
+        return; // Salir de la función
+    }
+
+    // Filtrar productos por marca seleccionada
+    const filteredProducts = productos.filter(producto => 
+        producto.categoria === selectedBrand
+    );
+
+    // Limpiar el contenido del producto antes de mostrar los filtrados
+    productList.innerHTML = '';
+
+    // Mostrar productos filtrados
+    filteredProducts.forEach(producto => {
+        const productItem = document.createElement('div');
+        productItem.className = 'product-item';
+        productItem.innerHTML = `
+            <div class="d-flex align-items-center mt-1 producto">
+                <img src="${producto.imagen}" width="100" height="100%" class="me-2" alt="">
+                <label class="form-check-label product-title">
+                    ${producto.nombre}
+                    <h5>$${producto.precio}</h5>
+                    <button type="button" class="btn btn-danger ml-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('${producto.nombre}', ${producto.precio})">+</button>
+                    <button type="button" class="btn btn-danger ml-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('${producto.nombre}', ${producto.precio})">-</button>
+                </label>
+            </div>
+        `;
+        productList.appendChild(productItem);
+    });
+    // Mensaje si no hay productos filtrados
+    if (filteredProducts.length === 0) {
+            productList.innerHTML = '<p>No se encontraron productos para esta marca.</p>';
+        }
+}
+
+// Aquí irían las funciones addProduct y removeProduct
+function addProduct(nombre, precio) {
+    console.log(`Producto añadido: ${nombre}, Precio: $${precio}`);
+    // Lógica para añadir el producto al carrito
+}
+
+function removeProduct(nombre, precio) {
+    console.log(`Producto eliminado: ${nombre}, Precio: $${precio}`);
+    // Lógica para eliminar el producto del carrito
+}
+
+
       
       document.addEventListener("DOMContentLoaded", function() {
     let cart = [];

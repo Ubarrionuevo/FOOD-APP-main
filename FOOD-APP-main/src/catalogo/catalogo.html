@@ -10,6 +10,9 @@
     <title>Pichichus Forrajeria</title>
     <style>
       
+
+
+      
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -61,16 +64,25 @@
     </nav>
 
 
-    <div class="search-container">
-        <a href="/index.html " class="text-decoration-none p-2" style="color: black;" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-left"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/><path d="m12 8-4 4 4 4"/></svg>
-    
-        </a>
-        <input type="text" class="search-input" id="buscador" placeholder="Buscar...">
-        <button class="search-btn m-2" onclick="filterProducts()">Buscar</button>
+    <div class="filter-container search-container">
+        <label for="brand-select" style="margin-left: 30px;">Filtro:</label>
+        <select id="brand-select" style="margin-left: 30px; border-radius: 20px;" onchange="filterProducts()">
+            <option value="">Todas las marcas</option>
+            <option value="estampa">Estampa</option>
+            <option value="gran-campeon">Gran Campeón</option>
+            <option value="raza-pequeña">Odwalla</option>
+            <option value="premium-vital">Premium Vital</option>
+            <option value="dog-selection">Dog Selection</option>
+            <option value="pacha">Pacha</option>
+            <option value="nutribon">Nutribon</option>
+            <option value="matute">Matute</option>
+            <option value="vagoneta">Vagoneta</option>
+        </select>
     </div>
-
-    <!-- Catálogo de productos -->
+    <div id="product-list" class="product-list">
+        <!-- Aquí se mostrarán los productos filtrados -->
+    </div>
+    
     <div class="container d-flex justify-content-center align-items-center" id="catalogo">
         <div class="form-container row">
             <form class="formulario">
@@ -543,7 +555,97 @@
     <script>
       
 
-/*BUSCADOR LOGICA*/
+      const productos = [
+    {
+        nombre: 'PERROS ADULTOS 8kg',
+        precio: 15000,
+        imagen: '/img/estampa.jpg',
+        categoria: 'estampa',
+        id: 1,
+    },
+    {
+        nombre: 'PERROS ADULTOS 20kg',
+        precio: 27500,
+        imagen: '/img/estampa.jpg',
+        categoria: 'estampa',
+        id: 2,
+    },
+    {
+        nombre: 'RAZA PEQUEÑA 8kg',
+        precio: 15600,
+        imagen: '/img/estampa raza pequeña.jpg',
+        categoria: 'raza-pequeña',
+        id: 3,
+    },
+    {
+        nombre: 'PERRO CACHORRO 10kg',
+        precio: 18300,
+        imagen: '/img/gran campeon cachorro.jpg',
+        categoria: 'gran-campeon',
+        id: 4,
+    },
+    {
+        nombre: 'PERRO ADULTO 21 kg',
+        precio: 29600,
+        imagen: '/img/gran campeon 21 k.jpg',
+        categoria: 'gran-campeon',
+        id: 5,
+    }
+];
+function filterProducts() {
+    const selectedBrand = document.getElementById('brand-select').value;
+    const productList = document.getElementById('product-list');
+
+    // Limpiar el contenido del producto
+    if (selectedBrand === '') {
+        // Si se selecciona "Todas las marcas", eliminar el div de productos
+        productList.innerHTML = ''; // Eliminar los productos
+        return; // Salir de la función
+    }
+
+    // Filtrar productos por marca seleccionada
+    const filteredProducts = productos.filter(producto => 
+        producto.categoria === selectedBrand
+    );
+
+    // Limpiar el contenido del producto antes de mostrar los filtrados
+    productList.innerHTML = '';
+
+    // Mostrar productos filtrados
+    filteredProducts.forEach(producto => {
+        const productItem = document.createElement('div');
+        productItem.className = 'product-item';
+        productItem.innerHTML = `
+            <div class="d-flex align-items-center mt-1 producto">
+                <img src="${producto.imagen}" width="100" height="100%" class="me-2" alt="">
+                <label class="form-check-label product-title">
+                    ${producto.nombre}
+                    <h5>$${producto.precio}</h5>
+                    <button type="button" class="btn btn-danger ml-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('${producto.nombre}', ${producto.precio})">+</button>
+                    <button type="button" class="btn btn-danger ml-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="removeProduct('${producto.nombre}', ${producto.precio})">-</button>
+                </label>
+            </div>
+        `;
+        productList.appendChild(productItem);
+    });
+    // Mensaje si no hay productos filtrados
+    if (filteredProducts.length === 0) {
+            productList.innerHTML = '<p>No se encontraron productos para esta marca.</p>';
+        }
+}
+
+// Aquí irían las funciones addProduct y removeProduct
+function addProduct(nombre, precio) {
+    console.log(`Producto añadido: ${nombre}, Precio: $${precio}`);
+    // Lógica para añadir el producto al carrito
+}
+
+function removeProduct(nombre, precio) {
+    console.log(`Producto eliminado: ${nombre}, Precio: $${precio}`);
+    // Lógica para eliminar el producto del carrito
+}
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     let cart = [];

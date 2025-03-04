@@ -459,7 +459,6 @@
                     <button type="button" class="btn btn-primary w-100" id="boton-carrito" onclick="openModal()">Carrito (0)</button>
                 </div>
     
-                <!-- Banner del precio total -->
                 <div class="total-price-banner">
                     <h5>Total: $<span id="total-price">0</span></h5>
                 </div>
@@ -497,7 +496,7 @@
         </div>
     </div>
 
-    /*MODAL DEL ALERTA */ 
+    
     <div class="modal fade" id="emptyCartModal" tabindex="-1" aria-labelledby="emptyCartModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -562,42 +561,38 @@
 
     function filterProducts() {
         const selectedBrand = document.getElementById('brand-select').value;
-        const productList = document.getElementById('product-list');
+        const formularioCatalogo = document.getElementById('formulario-catalogo');
+        const allProductItems = formularioCatalogo.getElementsByClassName('product-item');
+        const totalPriceBanner = document.querySelector('.total-price-banner');
+        const carritoInfo = document.getElementById('carrito-info');
 
-        // Limpiar el contenido del producto
+        // Primero ocultamos todas las secciones
+        Array.from(allProductItems).forEach(item => {
+            item.style.display = 'none';
+        });
+
+        // Si se selecciona "Todas las marcas", mostramos todas las secciones
         if (selectedBrand === '') {
-            productList.innerHTML = ''; 
+            Array.from(allProductItems).forEach(item => {
+                item.style.display = 'block';
+            });
+            totalPriceBanner.style.display = 'block';
+            carritoInfo.style.display = 'block';
             return;
         }
 
-        // Filtrar productos por marca seleccionada
-        const filteredProducts = productos.filter(producto => 
-            producto.categoria === selectedBrand
-        );
+        // Ocultar el banner del total y el carrito cuando se filtra por marca
+        totalPriceBanner.style.display = 'none';
+        carritoInfo.style.display = 'none';
 
-        // Limpiar el contenido del producto antes de mostrar los filtrados
-        productList.innerHTML = '';
-
-        // Mostrar productos filtrados
-        if (filteredProducts.length === 0) {
-            productList.innerHTML = '<p>No se encontraron productos para esta marca.</p>';
-        } else {
-            filteredProducts.forEach(producto => {
-                const productItem = document.createElement('div');
-                productItem.className = 'product-item';
-                productItem.innerHTML = `
-                    <div class="d-flex align-items-center mt-1 producto">
-                        <img src="${producto.imagen}" width="100" height="100%" class="me-2" alt="">
-                        <label class="form-check-label product-title">
-                            ${producto.nombre}
-                            <h5>$${producto.precio}</h5>
-                            <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" onclick="addProduct('${producto.nombre}', ${producto.precio})">AGREGAR</button>
-                        </label>
-                    </div>
-                `;
-                productList.appendChild(productItem);
-            });
-        }
+        // Mostrar solo la sección de la marca seleccionada
+        Array.from(allProductItems).forEach(item => {
+            const brandText = item.querySelector('span').textContent.toLowerCase();
+            const brandName = selectedBrand.replace(/-/g, ' ');
+            if (brandText.toLowerCase().includes(brandName)) {
+                item.style.display = 'block';
+            }
+        });
     }
 
     // Función para cargar el carrito desde localStorage
